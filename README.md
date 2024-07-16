@@ -12,6 +12,8 @@ Google Gemini AI App Hackathon Submission
 
 4. Set up your [API key](##Setting-up-an-API-key)
 
+5. Set up [pre-commit linting](##Linting)
+
 ## Setting up an API key
 
 1. Get an [API key](https://aistudio.google.com/app/apikey)
@@ -19,3 +21,9 @@ Google Gemini AI App Hackathon Submission
 2. Create a file called `.env` in the root of the project directory.
 
 3. Create a variable `API_KEY=your_api_key` in the `.env` file.
+
+## Linting
+
+1. Run `pre-commit install` in the root of your project directory.
+
+2. (Optional) Run pre-commit hooks manually `pre-commit run --all-files`.
