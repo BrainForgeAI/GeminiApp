@@ -1,0 +1,6 @@
+repos:
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.5.2 # Use the latest version from https://github.com/charliermarsh/ruff-pre-commit/releases
+    hooks:
+      - id: ruff
+        args: ["--config=ruff.toml", "--fix"]

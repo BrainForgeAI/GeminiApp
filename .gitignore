@@ -1,0 +1,87 @@
+# Ignore build output directories
+bin/
+obj/
+
+# Ignore user-specific files
+.vscode/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.userprefs
+
+# Ignore the .env file if you're storing sensitive information like API keys
+.env
+
+# Ignore Visual Studio Code settings directory
+.vscode/
+
+# Ignore the JetBrains Rider settings directory
+.idea/
+
+# Ignore the ReSharper settings directory
+_ReSharper.Caches/
+
+# Ignore logs
+*.log
+
+# Ignore packages directory
+packages/
+
+# Ignore NuGet packages
+*.nupkg
+# Uncomment if necessary however generally it will be regenerated when needed
+# packages/
+
+# Ignore npm packages
+node_modules/
+
+# Ignore .NET Core dependencies
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Ignore publish output
+*.Publish.xml
+
+# Ignore temporary files
+tmp/
+temp/
+
+# Ignore build results
+*.dll
+*.exe
+*.so
+*.dylib
+*.a
+*.lib
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore Rider plugin preferences
+.idea/
+*.sln.iml
+
+# Ignore Rider user preferences
+*.dotsettings.user
+
+# Ignore Visual Studio 2019 user preferences
+.vscode/
+.vs/
+*.vcxproj.user
+*.dotsettings.user
+
+# Ignore Visual Studio 2022 user preferences
+.vscode/
+.vs/
+*.vcxproj.user
+*.dotsettings.user
+
+# Ignore virtual envs
+venv
+.venv
+
+# Ignore pycache
+__pycache__
