@@ -1,0 +1,48 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e2124;
+    color: white;
+    font-family: 'Bebas Neue';
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .brand-name {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .navbar-center a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 25px;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .play-button {
+    background-color: #e75480;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  
+  
