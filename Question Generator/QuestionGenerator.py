@@ -14,9 +14,12 @@ genai.configure(api_key=os.environ["API_KEY"])
 class QuestionGenerator:
     model = genai.GenerativeModel(model_name='gemini-1.5-flash')
     
-    def __init__(self, persona: str = question_persona, guidelines: str=question_guidelines):
+    def __init__(self, syllabus: str, persona: str = question_persona,
+                 guidelines: str=question_guidelines):
         
         """
+        :param syllabus:
+            The syllabus or course outline from which all questions will be generated.
         :param persona (optional):
             Each prompt includes a persona statement, which helps the language model understand its 
             role and generate more relevant and accurate content. For example: You are an
@@ -28,6 +31,9 @@ class QuestionGenerator:
         
         self.persona = persona
         self.guidelines = guidelines
+        
+        self.syllabus = syllabus
+        self.questions_so_far = ""
         
         
     def generate_response_questions(self, **kwargs) -> str:
@@ -42,3 +48,33 @@ class QuestionGenerator:
         :return response.text:
             Text output of response.
         """
+        
+        continuation_prompt = f'''
+        {self.persona}
+        
+        Here's the syllabus:
+        {self.syllabus}
+
+        Here's what you've written so far (if it's blank, that means we're at the beginning of the question generation!):
+
+        {self.questions_so_far}
+        
+        Additional info. (If "answer", that means the user provided an answer and you continue the question generation based on the correctness of the answer. If the answer is correct, permit the user to move on. If the answer is incorrect, reject the user).
+        
+        {', '.join([f'{key}: {value}' for key, value in kwargs.items()])}
+
+        =====
+
+        First, silently review what you've written so far.
+        
+        Your task is to continue where you left off and write the next question.
+        You are not expected to finish the whole syllabus right now. However, once the syllabus
+        is COMPLETELY finished, write IAMDONE. Remember, if the answer to the previous question was wrong, generate an easier question on the same topic. If it was right, generate a harder question. Once you fell we've successfull convered this topic, move on to the next topic in the syllabus.
+
+        As a reminder, your guidelines are:
+        {self.guidelines}'''
+     
+        response = self.model.generate_content(continuation_prompt)
+        self.questions_so_far += response.text
+
+        return response, response.text
