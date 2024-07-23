@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question Generator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      #question {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      #answer {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Question Generator</h1>
+    <div id="question"></div>
+    <textarea id="answer" rows="4" placeholder="Your answer..."></textarea>
+    <button id="submit">Submit Answer</button>
+    <button id="stop">Stop Generation</button>
+
+    <script>
+      $(document).ready(function () {
+        function getQuestion() {
+          $.get("/get_question", function (data) {
+            $("#question").text(data.question);
+          });
+        }
+
+        function submitAnswer() {
+          var answer = $("#answer").val();
+          $.post("/submit_answer", { answer: answer }, function (data) {
+            $("#question").text(data.question);
+            $("#answer").val("");
+            if (data.completed) {
+              $("#submit").prop("disabled", true);
+            }
+          });
+        }
+
+        $("#submit").click(submitAnswer);
+
+        $("#stop").click(function () {
+          $("#question").text("Question generation stopped.");
+          $("#submit").prop("disabled", true);
+        });
+
+        getQuestion();
+      });
+    </script>
+  </body>
+</html>
