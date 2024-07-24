@@ -7,11 +7,15 @@ const navbar = () => {
     <span className="brand-name">EDUQUEST</span>
     </div>
     <div className="navbar-center">
-      <a href="how-it-works">HOW IT WORKS</a>
-      <a href="about-us">ABOUT US</a>
+      <a href="home">HOME</a>
+      <a href="about">ABOUT</a>
+      <a href="gallery">GALLERY</a>
+      <a href="faq">FAQ</a>
+      <a href="contact">CONTACT</a>
+
     </div>
     <div className="navbar-right">
-      <button className="play-button">PLAY</button>
+      <button className="play-button">SIGN UP</button>  
     </div>
   </nav>
   )
