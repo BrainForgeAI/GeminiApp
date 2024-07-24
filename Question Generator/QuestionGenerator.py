@@ -2,6 +2,7 @@
 Module focused exclusively on generating questions from a syllabus of varying difficulty and subject.
 """
 import google.generativeai as genai
+from google.generativeai.types.generation_types import GenerateContentResponse
 from dotenv import load_dotenv
 import os
 import json
@@ -18,7 +19,6 @@ class QuestionGenerator:
     
     def __init__(self, syllabus: str, persona: str = question_persona,
                  guidelines: str=question_guidelines):
-        
         """
         :param syllabus:
             The syllabus or course outline from which all questions will be generated.
@@ -38,7 +38,7 @@ class QuestionGenerator:
         self.questions_so_far = ""
         
         
-    def generate_response_questions(self, **kwargs) -> str:
+    def generate_response_questions(self, **kwargs) -> tuple[GenerateContentResponse, str, dict]:
         """
         Generates new question based on response to previous question.
         
@@ -49,6 +49,8 @@ class QuestionGenerator:
             Entire response object.
         :return response.text:
             Text output of response.
+        :return json.loads(response.text):
+            Dictionary version of text output.
         """
         
         continuation_prompt = f'''

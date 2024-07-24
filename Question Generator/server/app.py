@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, Response
 import sys
 import os
 
@@ -14,18 +14,33 @@ gq = QuestionGenerator(syllabus=sample_syllabus)
 current_question = {}
 
 @app.route('/')
-def index():
+def index() -> str:
+    """
+    Renders index.html.
+    """
     return render_template('index.html')
 
 @app.route('/get_question', methods=['GET'])
-def get_question():
+def get_question() -> Response:
+    """
+    Get request for question prompt.
+    
+    :return jsonify(current_question):
+        JSON Response object.
+    """
     global current_question
     _, _, current_question = gq.generate_response_questions()
     
     return jsonify(current_question)
 
 @app.route('/submit_answer', methods=['POST'])
-def submit_answer():
+def submit_answer() -> Response:
+    """
+    Post request for question prompt.
+    
+    :return jsonify(current_question):
+        JSON Response object.
+    """
     global current_question
     answer = request.form['answer']
     _, _, current_question = gq.generate_response_questions(answer=answer)
