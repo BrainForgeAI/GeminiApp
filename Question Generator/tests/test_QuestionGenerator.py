@@ -1,78 +1,86 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from ..QuestionGenerator import QuestionGenerator
+from QuestionGenerator import QuestionGenerator
+from google.generativeai.types.generation_types import GenerateContentResponse
+import json
+
+# Mock the environment and API key configuration
+@pytest.fixture(autouse=True)
+def mock_env_and_genai(monkeypatch):
+    monkeypatch.setenv("API_KEY", "mock_api_key")
+    monkeypatch.setattr("google.generativeai.configure", lambda api_key: None)
+
+# Sample data for testing
+sample_syllabus = "Sample syllabus content"
+sample_persona = "Sample persona"
+sample_guidelines = "Sample guidelines"
 
 @pytest.fixture
 def question_generator():
-    syllabus = "Topic 1: Introduction\nTopic 2: Advanced Concepts"
-    return QuestionGenerator(syllabus=syllabus)
+    return QuestionGenerator(syllabus=sample_syllabus, persona=sample_persona, guidelines=sample_guidelines)
 
-def test_initialization(question_generator):
-    assert question_generator.syllabus == "Topic 1: Introduction\nTopic 2: Advanced Concepts"
+def test_question_generator_initialization(question_generator):
+    assert question_generator.syllabus == sample_syllabus
+    assert question_generator.persona == sample_persona
+    assert question_generator.guidelines == sample_guidelines
     assert question_generator.questions_so_far == ""
 
-def test_initialization_with_custom_persona_and_guidelines():
-    custom_persona = "You are a history professor."
-    custom_guidelines = "Focus on dates and important events."
-    qg = QuestionGenerator("History syllabus", persona=custom_persona, guidelines=custom_guidelines)
+@patch('question_generator.generate_with_retry')
+def test_generate_response_questions(mock_generate_with_retry, question_generator):
+    # Mock the response from generate_with_retry
+    mock_response = MagicMock(spec=GenerateContentResponse)
+    mock_response.text = json.dumps({
+        "question": "Sample question",
+        "difficulty": "Medium",
+        "topic": "Sample topic"
+    })
+    mock_generate_with_retry.return_value = mock_response
+
+    # Call the method
+    response, text, json_data = question_generator.generate_response_questions(answer="Sample answer")
+
+    # Assertions
+    assert isinstance(response, GenerateContentResponse)
+    assert text == mock_response.text
+    assert json_data == json.loads(mock_response.text)
+    assert question_generator.questions_so_far == mock_response.text
+
+    # Check if generate_with_retry was called with correct arguments
+    mock_generate_with_retry.assert_called_once()
+    call_args = mock_generate_with_retry.call_args[1]
+    assert 'model' in call_args
+    assert 'prompt' in call_args
+    assert sample_syllabus in call_args['prompt']
+    assert sample_persona in call_args['prompt']
+    assert sample_guidelines in call_args['prompt']
+    assert "answer: Sample answer" in call_args['prompt']
+
+def test_generate_response_questions_with_multiple_kwargs(question_generator):
+    with patch('question_generator.generate_with_retry') as mock_generate_with_retry:
+        mock_response = MagicMock(spec=GenerateContentResponse)
+        mock_response.text = json.dumps({"question": "Sample question"})
+        mock_generate_with_retry.return_value = mock_response
+
+        question_generator.generate_response_questions(answer="Sample answer", difficulty="Hard", topic="Advanced Math")
+
+        call_args = mock_generate_with_retry.call_args[1]['prompt']
+        assert "answer: Sample answer" in call_args
+        assert "difficulty: Hard" in call_args
+        assert "topic: Advanced Math" in call_args
+
+@patch('question_generator.generate_with_retry')
+def test_questions_so_far_accumulation(mock_generate_with_retry, question_generator):
+    mock_response1 = MagicMock(spec=GenerateContentResponse)
+    mock_response1.text = json.dumps({"question": "Question 1"})
+    mock_response2 = MagicMock(spec=GenerateContentResponse)
+    mock_response2.text = json.dumps({"question": "Question 2"})
     
-    assert qg.persona == custom_persona
-    assert qg.guidelines == custom_guidelines
+    mock_generate_with_retry.side_effect = [mock_response1, mock_response2]
 
-@patch('google.generativeai.GenerativeModel')
-def test_generate_response_questions(mock_model, question_generator):
-    mock_response = MagicMock()
-    mock_response.text = "What is the first topic in the syllabus?"
-    mock_model.return_value.generate_content.return_value = mock_response
+    question_generator.generate_response_questions()
+    question_generator.generate_response_questions()
 
-    response, text = question_generator.generate_response_questions()
+    assert question_generator.questions_so_far == mock_response1.text + mock_response2.text
 
-    assert response == mock_response
-    assert text == "What is the first topic in the syllabus?"
-    assert question_generator.questions_so_far == "What is the first topic in the syllabus?"
-
-@patch('google.generativeai.GenerativeModel')
-def test_generate_response_questions_with_kwargs(mock_model, question_generator):
-    mock_response = MagicMock()
-    mock_response.text = "What are the advanced concepts mentioned in Topic 2?"
-    mock_model.return_value.generate_content.return_value = mock_response
-
-    response, text = question_generator.generate_response_questions(answer="correct", difficulty="harder")
-
-    assert response == mock_response
-    assert text == "What are the advanced concepts mentioned in Topic 2?"
-    assert "answer: correct" in mock_model.return_value.generate_content.call_args[0][0]
-    assert "difficulty: harder" in mock_model.return_value.generate_content.call_args[0][0]
-
-@patch('google.generativeai.GenerativeModel')
-def test_multiple_question_generation(mock_model, question_generator):
-    mock_responses = [
-        MagicMock(text="Question 1"),
-        MagicMock(text="Question 2"),
-        MagicMock(text="Question 3"),
-    ]
-    mock_model.return_value.generate_content.side_effect = mock_responses
-
-    for i in range(3):
-        response, text = question_generator.generate_response_questions()
-        assert text == f"Question {i+1}"
-    
-    assert question_generator.questions_so_far == "Question 1Question 2Question 3"
-
-def test_syllabus_in_prompt(question_generator):
-    with patch.object(question_generator.model, 'generate_content') as mock_generate:
-        question_generator.generate_response_questions()
-        prompt = mock_generate.call_args[0][0]
-        assert question_generator.syllabus in prompt
-
-def test_persona_in_prompt(question_generator):
-    with patch.object(question_generator.model, 'generate_content') as mock_generate:
-        question_generator.generate_response_questions()
-        prompt = mock_generate.call_args[0][0]
-        assert question_generator.persona in prompt
-
-def test_guidelines_in_prompt(question_generator):
-    with patch.object(question_generator.model, 'generate_content') as mock_generate:
-        question_generator.generate_response_questions()
-        prompt = mock_generate.call_args[0][0]
-        assert question_generator.guidelines in prompt
+if __name__ == "__main__":
+    pytest.main()
