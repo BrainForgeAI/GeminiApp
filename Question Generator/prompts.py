@@ -3,7 +3,7 @@ question_guidelines = """The questions you generate should only be related to th
   "prev_question": "right/wrong",
   "prev_question_answer: "",
   "prev_question_actual_right_answer: "",
-  "q_number": 2,
+  "question_number": 2,
   "topic": "Unit 01: Preparing for Calculus I",
   "difficulty": "Easy",
   "question": ""
