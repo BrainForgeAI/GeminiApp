@@ -39,7 +39,9 @@
     <div class="question-info">
       <p><strong>Topic:</strong> <span id="topic"></span></p>
       <p><strong>Difficulty:</strong> <span id="difficulty"></span></p>
-      <p><strong>Question Number:</strong> <span id="q_number"></span></p>
+      <p>
+        <strong>Question Number:</strong> <span id="question_number"></span>
+      </p>
     </div>
     <div id="question"></div>
     <div id="previous-question" style="display: none">
@@ -63,7 +65,7 @@
         function updateQuestionInfo(data) {
           $("#topic").text(data.topic || "");
           $("#difficulty").text(data.difficulty || "");
-          $("#q_number").text(data.q_number || "");
+          $("#question_number").text(data.question_number || "");
           $("#question").text(data.question || "");
 
           if (data.prev_question) {
