@@ -5,6 +5,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 from prompts import question_persona, question_guidelines
+from tools import generate_with_retry
 
 
 load_dotenv()
@@ -74,7 +75,7 @@ class QuestionGenerator:
         As a reminder, your guidelines are:
         {self.guidelines}'''
      
-        response = self.model.generate_content(continuation_prompt)
+        response = generate_with_retry(model=self.model, prompt=continuation_prompt)
         self.questions_so_far += response.text
 
         return response, response.text
