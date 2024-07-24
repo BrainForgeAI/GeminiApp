@@ -83,26 +83,3 @@ class QuestionGenerator:
 
         return response, response.text, json.loads(response.text)
     
-    
-if __name__ == '__main__':
-    from prompts import sample_syllabus
-
-    gq = QuestionGenerator(syllabus=sample_syllabus)
-    iterations = 0
-    answer = ""
-
-    while True:
-        if iterations == 0:
-            _, question, json_question = gq.generate_response_questions()
-        else:
-            _, question, json_question= gq.generate_response_questions(answer=answer)
-            
-        print(json_question)
-        print(f"type: {type(json_question)}")
-        answer = str(input("Whats your answer: "))
-        iterations += 1
-        
-        if "IAMDONE" in question:
-            print("Question generation completed.")
-            break
-    
