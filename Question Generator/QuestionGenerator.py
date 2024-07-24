@@ -4,6 +4,7 @@ Module focused exclusively on generating questions from a syllabus of varying di
 import google.generativeai as genai
 from dotenv import load_dotenv
 import os
+import json
 from prompts import question_persona, question_guidelines
 from tools import generate_with_retry
 
@@ -13,7 +14,7 @@ genai.configure(api_key=os.environ["API_KEY"])
 
 
 class QuestionGenerator:
-    model = genai.GenerativeModel(model_name='gemini-1.5-flash')
+    model = genai.GenerativeModel(model_name='gemini-1.5-flash', generation_config={"response_mime_type": "application/json"})
     
     def __init__(self, syllabus: str, persona: str = question_persona,
                  guidelines: str=question_guidelines):
@@ -78,7 +79,7 @@ class QuestionGenerator:
         response = generate_with_retry(model=self.model, prompt=continuation_prompt)
         self.questions_so_far += response.text
 
-        return response, response.text
+        return response, response.text, json.loads(response.text)
     
     
 if __name__ == '__main__':
@@ -135,11 +136,12 @@ if __name__ == '__main__':
     answer = ""
     while True:
         if iterations == 0:
-            _, question = gq.generate_response_questions()
+            _, question, json_question = gq.generate_response_questions()
         else:
-            _, question = gq.generate_response_questions(answer=answer)
+            _, question, json_question= gq.generate_response_questions(answer=answer)
             
-        print(question)
+        print(json_question)
+        print(f"type: {type(json_question)}")
         answer = str(input("Whats your answer: "))
         iterations += 1
         

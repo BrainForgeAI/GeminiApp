@@ -12,8 +12,15 @@
         margin: 0 auto;
         padding: 20px;
       }
+      .question-info {
+        margin-bottom: 20px;
+      }
+      .question-info p {
+        margin: 5px 0;
+      }
       #question {
         font-size: 18px;
+        font-weight: bold;
         margin-bottom: 20px;
       }
       #answer {
@@ -29,23 +36,58 @@
   </head>
   <body>
     <h1>Question Generator</h1>
+    <div class="question-info">
+      <p><strong>Topic:</strong> <span id="topic"></span></p>
+      <p><strong>Difficulty:</strong> <span id="difficulty"></span></p>
+      <p><strong>Question Number:</strong> <span id="q_number"></span></p>
+    </div>
     <div id="question"></div>
+    <div id="previous-question" style="display: none">
+      <p>
+        <strong>Previous Question:</strong> <span id="prev_question"></span>
+      </p>
+      <p>
+        <strong>Your Answer:</strong> <span id="prev_question_answer"></span>
+      </p>
+      <p>
+        <strong>Correct Answer:</strong>
+        <span id="prev_question_actual_right_answer"></span>
+      </p>
+    </div>
     <textarea id="answer" rows="4" placeholder="Your answer..."></textarea>
     <button id="submit">Submit Answer</button>
     <button id="stop">Stop Generation</button>
 
     <script>
       $(document).ready(function () {
+        function updateQuestionInfo(data) {
+          $("#topic").text(data.topic || "");
+          $("#difficulty").text(data.difficulty || "");
+          $("#q_number").text(data.q_number || "");
+          $("#question").text(data.question || "");
+
+          if (data.prev_question) {
+            $("#previous-question").show();
+            $("#prev_question").text(data.prev_question || "");
+            $("#prev_question_answer").text(data.prev_question_answer || "");
+            $("#prev_question_actual_right_answer").text(
+              data.prev_question_actual_right_answer || ""
+            );
+          } else {
+            $("#previous-question").hide();
+          }
+        }
+
         function getQuestion() {
           $.get("/get_question", function (data) {
-            $("#question").text(data.question);
+            updateQuestionInfo(data);
           });
         }
 
         function submitAnswer() {
           var answer = $("#answer").val();
           $.post("/submit_answer", { answer: answer }, function (data) {
-            $("#question").text(data.question);
+            updateQuestionInfo(data);
             $("#answer").val("");
             if (data.completed) {
               $("#submit").prop("disabled", true);
@@ -60,6 +102,7 @@
           $("#submit").prop("disabled", true);
         });
 
+        // Generate the first question when the page loads
         getQuestion();
       });
     </script>
