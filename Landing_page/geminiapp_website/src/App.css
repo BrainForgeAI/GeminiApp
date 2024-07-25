@@ -66,7 +66,7 @@ nav .container {
 }
 
 .hero h1 span {
-  color: #e91e63;
+  color: #4A7098;
 }
 
 .hero p {
@@ -171,4 +171,38 @@ nav .container {
   .card-grid {
     grid-template-columns: 1fr;
   }
+}
+
+
+.quick-intro {
+  font-size:48px;
+  color:#a0a0a0;
+}
+
+.download-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background-color: #FFFFFF;
+  color: #5DD3E7;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+  background-color: #000000;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.download-button:active {
+  transform: translate(-50%, -50%) scale(0.95);
 }

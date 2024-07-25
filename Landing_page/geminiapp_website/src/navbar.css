@@ -28,6 +28,14 @@
     text-decoration: none;
     margin: 0 35px;
     font-size: 25px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .navbar-center a:hover {
+    background-color: #000000;
+    transform: scale(1.05) translate(2px);
+    color: #5DD3E7; /* Change color on hover */
+    border-radius: 5px; /* Add border radius */
   }
   
   .navbar-right {
@@ -35,19 +43,25 @@
     align-items: center;
   }
   
+  
   .signup-button {
     background-color: #65CBDF;
     color: white;
     border: none;
     padding: 9px 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     margin-right: 30px;
     cursor: pointer;
     transition: transform 0.3s ease;
   }
 
   .signup-button:hover {
-    transform: scale(1.05) translateY(-2px);
+    background-color:#000000;
+    transform: scale(1.05) translate(2px);
 }
+
+/* .download-button:active {
+  transform: translate(-50%, -50%) scale(0.95);
+} */
   
   

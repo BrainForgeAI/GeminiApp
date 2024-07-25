@@ -4,18 +4,19 @@ const HowItWorks = () => {
   return (
     <div className="container">
       <section className="hero">
-        <h1>CREATE YOUR <span>UNIVERSE</span>.</h1>
-        <p>Interactive fan experiences in the worlds of your favorite books, movies, and TV shows. Play, share, and remix with your friends.</p>
+        <h1>PLAY <span>SMART.</span> GROW <span>SMARTER.</span></h1>
+        <p className="quick-intro">EduQuest harnesses Google’s Gemini AI Model to revolutionize learning. Our adaptive platform creates personalized game-like experiences, 
+          tailoring challenges to each user's pace and style. We make education engaging and accessible for everyone. The joy of learning is something everyone deserves to experience</p>
       </section>
 
       <section>
-        <h2 className="section-title">PLAY IN THE WORLD OF...</h2>
+      <button className="download-button">DOWNLOAD NOW</button> 
         <div className="card-grid">
           <div className="card">
 
-            <div className="card-content">
-              <h3 className="card-title">GAME BOX</h3>
-            </div>
+            {/* <div className="card-content"> */}
+              {/* <h3 className="card-title">GAME BOX</h3> */}
+            {/* </div> */}
           </div>
           {/* Add more cards as needed */}
         </div>
