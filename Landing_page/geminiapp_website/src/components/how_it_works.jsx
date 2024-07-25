@@ -12,15 +12,9 @@ const HowItWorks = () => {
         <h2 className="section-title">PLAY IN THE WORLD OF...</h2>
         <div className="card-grid">
           <div className="card">
-            <img src="/path-to-image/pride-and-prejudice.jpg" alt="Pride and Prejudice" className="card-image" />
+
             <div className="card-content">
-              <h3 className="card-title">PRIDE AND PREJUDICE</h3>
-              <p>by Jane Austen</p>
-              <div className="card-tags">
-                <span className="tag">Romance</span>
-                <span className="tag">Classics</span>
-              </div>
-              <a href="#read-more" className="card-cta">READ MORE</a>
+              <h3 className="card-title">GAME BOX</h3>
             </div>
           </div>
           {/* Add more cards as needed */}
