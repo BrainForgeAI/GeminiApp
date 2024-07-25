@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 25px 20px;
     background-color: #1e2124;
     color: white;
     font-family: 'Bebas Neue';
@@ -26,7 +26,7 @@
   .navbar-center a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 35px;
     font-size: 25px;
   }
   
@@ -35,14 +35,19 @@
     align-items: center;
   }
   
-  .play-button {
+  .signup-button {
     background-color: #65CBDF;
     color: white;
     border: none;
-    padding: 8px 20px;
+    padding: 9px 20px;
     border-radius: 5px;
-    margin-right: 15px;
+    margin-right: 30px;
     cursor: pointer;
+    transition: transform 0.3s ease;
   }
+
+  .signup-button:hover {
+    transform: scale(1.05) translateY(-2px);
+}
   
   

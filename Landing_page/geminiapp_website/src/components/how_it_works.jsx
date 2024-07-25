@@ -14,7 +14,7 @@ const HowItWorks = () => {
           <div className="card">
             <img src="/path-to-image/pride-and-prejudice.jpg" alt="Pride and Prejudice" className="card-image" />
             <div className="card-content">
-              <h3 className="card-title">PRIDE AND PREJUDICE broski</h3>
+              <h3 className="card-title">PRIDE AND PREJUDICE</h3>
               <p>by Jane Austen</p>
               <div className="card-tags">
                 <span className="tag">Romance</span>

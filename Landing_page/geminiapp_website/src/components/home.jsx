@@ -7,6 +7,6 @@ const home = () => {
   )
 }
 
-<p1>testing where this is lol</p1>
+<p1>testing where this is lol idt this is the real homepage</p1>
 
 export default home
