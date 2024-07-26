@@ -48,7 +48,8 @@ if __name__ == "__main__":
     path = r"path_to_your_pdf"
     
     # Use this to get specific file
-    name = r"files/g2mh8lykfx97"
+    ident = ""
+    name = fr"files/{ident}"
     file_obj = genai.get_file(name=name)
     print(file_obj.name)
 
