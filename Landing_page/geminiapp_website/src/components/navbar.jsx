@@ -1,24 +1,24 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const navbar = () => {
+const Navbar = () => {
   return (
     <nav className="navbar">
-    <div className="navbar-left">
-    <span className="brand-name">BRAINFORGE</span>
-    </div>
-    <div className="navbar-center">
-      <a href="home">HOME</a>
-      <a href="about">ABOUT</a>
-      <a href="gallery">GALLERY</a>
-      <a href="faq">FAQ</a>
-      <a href="contact">CONTACT</a>
-
-    </div>
-    <div className="navbar-right">
-      <button className="signup-button">SIGN UP</button>  
-    </div>
-  </nav>
+      <div className="navbar-left">
+        <span className="brand-name">BRAINFORGE</span>
+      </div>
+      <div className="navbar-center">
+        <Link to="/">HOME</Link>
+        <Link to="/about">ABOUT</Link>
+        <Link to="/gallery">GALLERY</Link>
+        <Link to="/faq">FAQ</Link>
+        <Link to="/contact">CONTACT</Link>
+      </div>
+      <div className="navbar-right">
+        <button className="signup-button">SIGN UP</button>  
+      </div>
+    </nav>
   )
 }
 
-export default navbar
+export default Navbar

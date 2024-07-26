@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* background-image:url('Landing_page\geminiapp_website\Images\skybackground.png'); couldn't get this to work, try to put the image in the website*/
+  background-size:cover;
+  background-repeat:no-repeat;
 }
 
 body {
