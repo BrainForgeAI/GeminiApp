@@ -1,35 +1,27 @@
 """
 Module focused exclusively on generating questions from a syllabus of varying difficulty and subject.
 """
-import os
-import json
-from enum import Enum
 import google.generativeai as genai
 from google.generativeai.types.generation_types import GenerateContentResponse
 from dotenv import load_dotenv
+import os
+import json
 from prompts import question_persona, question_guidelines
 from tools import generate_with_retry
-from load_syllabus import load_syllabus_pdf
 
 
 load_dotenv()
 genai.configure(api_key=os.environ["API_KEY"])
 
 
-class SyllabusLoadType(Enum):
-    PDF = 1
-    TXT = 2
-
-
 class QuestionGenerator:
     model = genai.GenerativeModel(model_name='gemini-1.5-flash', generation_config={"response_mime_type": "application/json"})
     
-    def __init__(self, syllabus_load_type: SyllabusLoadType, path_to_syllabus: str = None,
-                 syllabus_name: str = None, persona: str = question_persona,
+    def __init__(self, syllabus: str, persona: str = question_persona,
                  guidelines: str=question_guidelines):
         """
-        :param syllabus_load_type:
-            Specifies whether to load syllabus from .pdf or .txt
+        :param syllabus:
+            The syllabus or course outline from which all questions will be generated.
         :param persona (optional):
             Each prompt includes a persona statement, which helps the language model understand its 
             role and generate more relevant and accurate content. For example: You are an
@@ -42,11 +34,7 @@ class QuestionGenerator:
         self.persona = persona
         self.guidelines = guidelines
         
-        if syllabus_load_type == SyllabusLoadType.PDF:
-            _, self.syllabus = load_syllabus_pdf(gemini_model=self.model, path_to_pdf=path_to_syllabus)
-        elif syllabus_load_type == SyllabusLoadType.TXT:
-            _, self.syllabus = load_syllabus_pdf(gemini_model=self.model, file_name=syllabus_name)
-
+        self.syllabus = syllabus
         self.questions_so_far = ""
         
         
@@ -94,4 +82,3 @@ class QuestionGenerator:
         self.questions_so_far += response.text
 
         return response, response.text, json.loads(response.text)
-
