@@ -34,6 +34,10 @@ def load_syllabus_pdf(gemini_model: 'GenerativeModel', path_to_pdf: str | pathli
 def load_syllabus_txt():
     raise NotImplementedError
 
+# TODO: Method to get file path from user (E.g. from the game).
+def get_file_path():
+    raise NotImplementedError
+
 
 if __name__ == "__main__":
     from dotenv import load_dotenv
