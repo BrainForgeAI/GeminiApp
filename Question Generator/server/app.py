@@ -5,12 +5,13 @@ import os
 # Add the parent directory to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from QuestionGenerator import QuestionGenerator
-from prompts import sample_syllabus
+from load_syllabus import load_syllabus
 
 app = Flask(__name__)
 
-
-gq = QuestionGenerator(syllabus=sample_syllabus)
+# Will raise Exception as currently implemented since file isn't being passed in.
+_, syllabus = load_syllabus(gemini_model=QuestionGenerator.model)
+qg = QuestionGenerator(syllabus=syllabus)
 current_question = {}
 
 @app.route('/')
@@ -29,7 +30,7 @@ def get_question() -> Response:
         JSON Response object.
     """
     global current_question
-    _, _, current_question = gq.generate_response_questions()
+    _, _, current_question = qg.generate_response_questions()
     
     return jsonify(current_question)
 
@@ -43,7 +44,7 @@ def submit_answer() -> Response:
     """
     global current_question
     answer = request.form['answer']
-    _, _, current_question = gq.generate_response_questions(answer=answer)
+    _, _, current_question = qg.generate_response_questions(answer=answer)
     
     if "IAMDONE" in current_question['question']:
         return jsonify({'question': "Question generation completed.", 'completed': True})
