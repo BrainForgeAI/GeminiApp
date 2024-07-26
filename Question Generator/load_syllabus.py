@@ -30,6 +30,10 @@ def load_syllabus_pdf(gemini_model: 'GenerativeModel', path_to_pdf: str | pathli
     
     return response, response.text
 
+# TODO: Load txt file as well.
+def load_syllabus_txt():
+    raise NotImplementedError
+
 
 if __name__ == "__main__":
     from dotenv import load_dotenv
