@@ -6,7 +6,7 @@ from prompts import summarize_prompt
 if TYPE_CHECKING:
     from google.generativeai import GenerativeModel
 
-def load_syllabus_pdf(gemini_model: 'GenerativeModel', path_to_file: str | pathlib.Path
+def load_syllabus(gemini_model: 'GenerativeModel', path_to_file: str | pathlib.Path
                       | os.PathLike = None, file_name: str = None):
     """
     Loads a PDF of a course syllabus and extracts a summary from it.
@@ -18,8 +18,10 @@ def load_syllabus_pdf(gemini_model: 'GenerativeModel', path_to_file: str | pathl
     :param file_name:
         If you want to use a previously uploaded file, pass the name of the file, files/{name}.
     """
-    if path_to_file and file_name:
-        raise ValueError("Both 'path_to_file' and 'file_name' cannot both be passed as argummets")
+    if not path_to_file and not file_name:
+        raise ValueError("'path_to_file' and 'file_name' cannot both be None")
+    elif path_to_file and file_name:
+        raise ValueError("'path_to_file' and 'file_name' cannot both be passed as argummets")
     elif file_name:
         file_ref = genai.get_file(name=file_name)
     else:
@@ -53,7 +55,7 @@ if __name__ == "__main__":
     file_obj = genai.get_file(name=name)
     print(file_obj.name)
 
-    res, res_txt = load_syllabus_pdf(gemini_model=model, file_name=file_obj.name)
+    res, res_txt = load_syllabus(gemini_model=model, file_name=file_obj.name)
     print(res_txt)
 
 
