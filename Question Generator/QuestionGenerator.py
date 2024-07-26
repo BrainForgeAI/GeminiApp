@@ -82,4 +82,3 @@ class QuestionGenerator:
         self.questions_so_far += response.text
 
         return response, response.text, json.loads(response.text)
-    

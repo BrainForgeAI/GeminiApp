@@ -55,5 +55,8 @@ sample_syllabus = sample_syllabus = '''Calc 1 Course Structure
     11.Evaluate definite integrals using the Fundamental Theorem of Calculus.
     12.Find indefinite and definite integral using substitution.
     '''
+    
+    
+summarize_prompt = "\n\nCan you summarize the course content in this outline as a neatly formatted list? If there is some sort of overview of topics covered, prioritize that."
         
         
