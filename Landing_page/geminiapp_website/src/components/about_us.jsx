@@ -37,9 +37,9 @@ const About = () => {
         
         {/* Add the rest of the paragraphs here */}
       </div>
-
+{/* 
       <h2 className="cta-title">Interested? What are you waiting for?</h2>
-      <button className="cta-button">PLAY NOW</button>
+      <button className="cta-button">PLAY NOW</button> */}
     </div>
     </div>
   );

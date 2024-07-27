@@ -104,7 +104,7 @@ body {
 }
 
 .download-button:hover {
-  background-color: #000000;
+  background-color: #5DD3E7;
   color: #FFFFFF;
   transform: scale(1.05);
 }
