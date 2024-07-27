@@ -131,24 +131,31 @@ body {
 
 /* About section styles */
 .about-container {
-  max-width: 800px;
-  margin-top: 100px;
+  margin-top: 150px;
+  margin-right: 50px;
+  margin-left: 50px;
+  max-width: 2000px;
+  text-align: center;
   padding: 20px;
   font-family: 'Inter', sans-serif;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .main-title {
-  font-size: 2.5em;
+  font-size: 50px;
   color: #ffffff;
-  margin-bottom: 20px;
+  margin: auto;
   text-shadow: 2px 2px 2px #000000;  
+  text-align: center;
   
 
   
 }
 
 .section-title {
-  font-size: 2em;
+  font-size: 50px;
   color: #ffffff;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -156,14 +163,14 @@ body {
 }
 
 .content {
-  font-size: 1em;
+  font-size: 22px;
   line-height: 1.6;
   color: #ffffff;
   text-shadow: 2px 2px 2px #000000;  
 }
 
 .cta-title {
-  font-size: 1.8em;
+  font-size: 22px;
   color: #ffffff;
   margin-top: 30px;
   margin-bottom: 20px;
