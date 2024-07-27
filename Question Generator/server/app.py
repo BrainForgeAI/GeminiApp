@@ -1,18 +1,45 @@
-from flask import Flask, render_template, request, jsonify, Response
 import sys
 import os
+from flask import Flask, render_template, request, jsonify, Response
 
 # Add the parent directory to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from QuestionGenerator import QuestionGenerator
 from load_syllabus import load_syllabus
 
+
 app = Flask(__name__)
 
-# Will raise Exception as currently implemented since file isn't being passed in.
-_, syllabus = load_syllabus(gemini_model=QuestionGenerator.model)
-qg = QuestionGenerator(syllabus=syllabus)
+qg = None
 current_question = {}
+
+@app.route('/load_syllabus', methods=['POST'])
+def upload_syllabus() -> Response:
+    """
+    Loads syllabus with from file upload.
+    
+    :returns Response JSON object.
+    """
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file part'}), 400
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+    if file:
+        filename = file.filename
+        file_path = os.path.join('uploads', filename)
+        os.makedirs('uploads', exist_ok=True)
+        file.save(file_path)
+        
+        try:
+            global qg
+            print("problem")
+            _, syllabus = load_syllabus(gemini_model=QuestionGenerator.model, path_to_file=file_path)
+            print('solution')
+            qg = QuestionGenerator(syllabus=syllabus)
+            return jsonify({'message': 'Syllabus loaded successfully'}), 200
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500
 
 @app.route('/')
 def index() -> str:
@@ -29,7 +56,9 @@ def get_question() -> Response:
     :return jsonify(current_question):
         JSON Response object.
     """
-    global current_question
+    global current_question, qg
+    if qg is None:
+        return jsonify({'error': 'Syllabus not loaded'}), 400
     _, _, current_question = qg.generate_response_questions()
     
     return jsonify(current_question)
@@ -42,7 +71,9 @@ def submit_answer() -> Response:
     :return jsonify(current_question):
         JSON Response object.
     """
-    global current_question
+    global current_question, qg
+    if qg is None:
+        return jsonify({'error': 'Syllabus not loaded'}), 400
     answer = request.form['answer']
     _, _, current_question = qg.generate_response_questions(answer=answer)
     
