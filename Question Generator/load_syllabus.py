@@ -1,12 +1,10 @@
-from typing import TYPE_CHECKING
 import pathlib
 import os
 from prompts import summarize_prompt
+import google.generativeai as genai
 
-if TYPE_CHECKING:
-    from google.generativeai import GenerativeModel
 
-def load_syllabus(gemini_model: 'GenerativeModel', path_to_file: str | pathlib.Path
+def load_syllabus(gemini_model: genai, path_to_file: str | pathlib.Path
                       | os.PathLike = None, file_name: str = None):
     """
     Loads a PDF of a course syllabus and extracts a summary from it.
@@ -38,25 +36,6 @@ def get_file_path():
     raise NotImplementedError
 
 
-if __name__ == "__main__":
-    from dotenv import load_dotenv
-    load_dotenv()
-    import google.generativeai as genai
-    import os
-    
-    genai.configure(api_key=os.environ["API_KEY"])
-    model = genai.GenerativeModel(model_name='gemini-1.5-flash')
-    
-    path = r"path_to_your_pdf"
-    
-    # Use this to get specific file
-    ident = ""
-    name = fr"files/{ident}"
-    file_obj = genai.get_file(name=name)
-    print(file_obj.name)
-
-    res, res_txt = load_syllabus(gemini_model=model, file_name=file_obj.name)
-    print(res_txt)
 
 
      
