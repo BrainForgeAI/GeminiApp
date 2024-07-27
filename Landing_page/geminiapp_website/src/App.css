@@ -17,13 +17,27 @@ body {
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 20px;
   display: flex;
   flex-direction:column;
   align-items:center;
 }
 
+.full-page-background {
+  background-image: url('./Assets/background.png');
+  background-size: cover;
+  background-position: center;
+  width: 100vw; 
+  height: 100vh;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: -1; 
+
+}
 /* Main Content */
 .hero {
   text-align: center;
@@ -112,14 +126,10 @@ body {
 .download-button:active {
   transform: translate scale(0.95);
 }
-
-
-.video-box{
-  
-  height:500px;
-  width:500px;
-  background-color:#ffc1cc;
-  margin-bottom:40px;
-
+.video-box {
+  max-width: 560px;
+  margin: 20px auto; 
 }
+
+
 
