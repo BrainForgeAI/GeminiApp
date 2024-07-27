@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="About_background">
     <div className="about-container">
-      <h1 className="main-title">Play smart. Grow Smarter</h1>
+      <h1 className="main-title">Learning can be hard. We can change that.</h1>
       
       <div className="content">
         <p>

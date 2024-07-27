@@ -131,16 +131,16 @@ body {
 
 /* About section styles */
 .about-container {
-  margin-top: 150px;
-  margin-right: 50px;
-  margin-left: 50px;
-  max-width: 2000px;
+  max-width: 1200px;
+  width: 90%;
   text-align: center;
-  padding: 20px;
+  padding: 40px;
   font-family: 'Inter', sans-serif;
-  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 90vh;
 }
 
 .main-title {
@@ -192,14 +192,17 @@ body {
   background-color: #3498DB;
 }
 
-.About_background{
+.About_background {
   background-image: url('./Assets/about_background.png');
   background-size: cover;
   background-position: center;
-  width: 100vw; 
+  width: 100vw;
   height: 100vh;
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; 
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

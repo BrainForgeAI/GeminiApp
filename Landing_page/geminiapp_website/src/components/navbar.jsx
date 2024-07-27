@@ -15,7 +15,7 @@ const Navbar = () => {
         <Link to="/gallery">CONTACT</Link>
       </div>
       <div className="navbar-right">
-        <button className="signup-button">SIGN UP</button>  
+        {/* <button className="signup-button">SIGN UP</button>   */}
       </div>
     </nav>
   )
