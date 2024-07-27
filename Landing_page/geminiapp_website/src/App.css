@@ -134,13 +134,14 @@ body {
   max-width: 800px;
   margin-top: 100px;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .main-title {
   font-size: 2.5em;
   color: #ffffff;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 2px #000000;  
   
 
   
@@ -151,12 +152,14 @@ body {
   color: #ffffff;
   margin-top: 30px;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 2px #000000;  
 }
 
 .content {
   font-size: 1em;
   line-height: 1.6;
   color: #ffffff;
+  text-shadow: 2px 2px 2px #000000;  
 }
 
 .cta-title {
@@ -164,7 +167,9 @@ body {
   color: #ffffff;
   margin-top: 30px;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 2px #000000;  
 }
+
 
 .cta-button {
   background-color: #5DADE2;
