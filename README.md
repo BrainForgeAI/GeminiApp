@@ -10,9 +10,9 @@ Google Gemini AI App Hackathon Submission
 
 3. Install dependencies by using `pip3 install -r requirements.txt`
 
-4. Set up your [API key](##Setting-up-an-API-key)
+4. Set up your [API key](#setting-up-an-api-key)
 
-5. Set up [pre-commit linting](##Linting)
+5. Set up [pre-commit linting](#linting)
 
 ## Setting up an API key
 
