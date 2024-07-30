@@ -1,11 +1,10 @@
-import sys
 import os
 from flask import Flask, render_template, request, jsonify, Response
 
-# Add the parent directory to the Python path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from QuestionGenerator import QuestionGenerator
-from load_syllabus import load_syllabus
+# # Add the parent directory to the Python path
+# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from QuestionGenerator.QuestionGenerator import QuestionGenerator
+from QuestionGenerator.load_syllabus import load_syllabus
 
 
 app = Flask(__name__)
