@@ -151,3 +151,7 @@ venv
 
 # Ignore pycache
 __pycache__
+
+
+# Ignore data folder
+data/
