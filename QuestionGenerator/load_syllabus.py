@@ -1,6 +1,6 @@
 import pathlib
 import os
-from prompts import summarize_prompt
+from .prompts import summarize_prompt
 import google.generativeai as genai
 
 

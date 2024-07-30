@@ -6,8 +6,8 @@ from google.generativeai.types.generation_types import GenerateContentResponse
 from dotenv import load_dotenv
 import os
 import json
-from prompts import question_persona, question_guidelines
-from tools import generate_with_retry
+from .prompts import question_persona, question_guidelines
+from .tools import generate_with_retry
 
 
 load_dotenv()

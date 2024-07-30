@@ -1,8 +1,9 @@
 import os
-from flask import Flask, render_template, request, jsonify, Response
+import sys
+from flask import Flask, request, jsonify, Response
 
 # # Add the parent directory to the Python path
-# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from QuestionGenerator.QuestionGenerator import QuestionGenerator
 from QuestionGenerator.load_syllabus import load_syllabus
 
@@ -11,6 +12,10 @@ app = Flask(__name__)
 
 qg = None
 current_question = {}
+
+@app.route('/')
+def index() -> str:
+    return jsonify(200)
 
 @app.route('/load_syllabus', methods=['POST'])
 def upload_syllabus() -> Response:
@@ -40,12 +45,6 @@ def upload_syllabus() -> Response:
         except Exception as e:
             return jsonify({'error': str(e)}), 500
 
-@app.route('/')
-def index() -> str:
-    """
-    Renders index.html.
-    """
-    return render_template('index.html')
 
 @app.route('/get_question', methods=['GET'])
 def get_question() -> Response:
