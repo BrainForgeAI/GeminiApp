@@ -4,7 +4,9 @@ import './App.css';
 import Navbar from './components/navbar.jsx';
 import Homepage from './components/home.jsx';
 import About from './components/about_us.jsx';
-import Gallery from './components/gallery.jsx'; // Capitalize component name
+import Gallery from './components/gallery.jsx';
+import FAQ from './components/FAQ.jsx';
+import Contact from './components/contact.jsx';
 import SplashScreen from './splashscreen.jsx';
 import './navbar.css';
 
@@ -29,6 +31,8 @@ function App() {
               <Route path="/" element={<Homepage />} />
               <Route path="/about" element={<About />} />
               <Route path="/gallery" element={<Gallery />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/faq" element={<FAQ />} />
             </Routes>
           </>
         )}
