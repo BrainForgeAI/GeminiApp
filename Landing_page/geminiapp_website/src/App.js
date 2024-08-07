@@ -9,6 +9,7 @@ import FAQ from './components/FAQ.jsx';
 import Contact from './components/contact.jsx';
 import SplashScreen from './splashscreen.jsx';
 import './navbar.css';
+import './styles.css';
 
 function App() {
   const [isBooting, setSplash] = useState(true);
@@ -16,8 +17,11 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setSplash(false);
-    }, 2000);
+    }, 4000);
   }, []);
+  if (isBooting) {
+    return <Loading />;
+  }
   
   return (
     <Router>

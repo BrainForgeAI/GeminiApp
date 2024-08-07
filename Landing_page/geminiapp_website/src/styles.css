@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: blueviolet;
+    color: #fff;
+  }
+  .App {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+  }
+  
