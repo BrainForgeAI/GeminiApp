@@ -1,11 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/navbar.css";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
         <span className="brand-name">BRAINFORGE</span>
+        {/* replace with a logo ^ */}
       </div>
       <div className="navbar-center">
         <Link to="/">HOME</Link>
@@ -15,10 +17,11 @@ const Navbar = () => {
         <Link to="/contact">CONTACT</Link>
       </div>
       <div className="navbar-right">
+        <a className="signup-btn">SIGN-UP</a>
         {/* <button className="signup-button">SIGN UP</button>   */}
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

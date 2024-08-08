@@ -1,0 +1,80 @@
+.navbar {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #036e8f;
+  color: #ffffff;
+  font-family: Patrick Hand SC, Arial, sans-serif;
+  font-weight: 400;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Add this new rule */
+body {
+  margin: 0;
+  padding: 0;
+}
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 24px;
+  margin-right: 10px;
+}
+
+.brand-name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center a {
+  color: #ffffff;
+  text-decoration: none;
+  /* margin: 0 45px; */
+  font-size: 25px;
+  transition: color 0.3s ease;
+  padding: 0 1.8rem;
+  border-right: solid white 2px;
+}
+
+.navbar-center a:first-child {
+  border-left: solid white 2px;
+}
+
+.navbar-center a:hover {
+  color: #65cbdf;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.signup-btn {
+  /* background-color: #65cbdf;
+  color: white; */
+  background-color: #fff;
+  color: #036e8f;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #65cbdf;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

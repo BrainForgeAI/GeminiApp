@@ -6,7 +6,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url('Assets/splashscreen-background.png');
+  background: url("../Assets/splashscreen-background.png");
   background-size: cover;
   display: flex;
   align-items: center;

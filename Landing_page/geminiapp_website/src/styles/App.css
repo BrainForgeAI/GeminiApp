@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Patrick+Hand+SC&family=Varela+Round&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #65CBDF;
+  background-color: #65cbdf;
   color: #ffffff;
   line-height: 1.6;
 }
@@ -26,34 +28,34 @@ body {
 }
 
 .full-page-background {
-  background-image: url('./Assets/background.png');
+  background-image: url("../Assets/background.png");
   background-size: cover;
   background-position: center;
-  width: 100vw; 
+  width: 100vw;
   height: 100vh;
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; 
+  z-index: -1;
 }
 
 /* Main Content */
 .hero {
   text-align: center;
-  padding: 80px 0 40px; 
+  padding: 80px 0 40px;
 }
 
 .hero h1 {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 64px;
   font-weight: 540;
   margin-bottom: 20px;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 2px #000000;  
+  text-shadow: 2px 2px 2px #000000;
 }
 
 .hero h1 span {
-  color: #4A7098;
+  color: #4a7098;
 }
 
 /* Buttons */
@@ -76,22 +78,22 @@ body {
 }
 
 .quick-intro {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 22px;
   font-weight: bold;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   max-width: 80%;
   margin: 0 auto 40px;
   line-height: 1.5;
-  text-shadow: 2px 2px 2px #000000;  
+  text-shadow: 2px 2px 2px #000000;
 }
 
 .download-button {
   display: block;
   margin: 0 auto;
-  background-color: #FFFFFF;
-  color: #5DD3E7;
+  background-color: #ffffff;
+  color: #5dd3e7;
   border: none;
   padding: 15px 40px;
   border-radius: 15px;
@@ -104,8 +106,8 @@ body {
 }
 
 .download-button:hover {
-  background-color: #5DD3E7;
-  color: #FFFFFF;
+  background-color: #5dd3e7;
+  color: #ffffff;
   transform: scale(1.05);
 }
 
@@ -115,7 +117,7 @@ body {
 
 .video-box {
   max-width: 560px;
-  margin: 20px auto; 
+  margin: 20px auto;
 }
 
 /* Responsive Design */
@@ -135,7 +137,7 @@ body {
   width: 90%;
   text-align: center;
   padding: 40px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -147,11 +149,8 @@ body {
   font-size: 50px;
   color: #ffffff;
   margin: auto;
-  text-shadow: 2px 2px 2px #000000;  
+  text-shadow: 2px 2px 2px #000000;
   text-align: center;
-  
-
-  
 }
 
 .section-title {
@@ -159,14 +158,14 @@ body {
   color: #ffffff;
   margin-top: 30px;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 2px #000000;  
+  text-shadow: 2px 2px 2px #000000;
 }
 
 .content {
   font-size: 22px;
   line-height: 1.6;
   color: #ffffff;
-  text-shadow: 2px 2px 2px #000000;  
+  text-shadow: 2px 2px 2px #000000;
 }
 
 .cta-title {
@@ -174,12 +173,11 @@ body {
   color: #ffffff;
   margin-top: 30px;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 2px #000000;  
+  text-shadow: 2px 2px 2px #000000;
 }
 
-
 .cta-button {
-  background-color: #5DADE2;
+  background-color: #5dade2;
   color: white;
   padding: 10px 20px;
   font-size: 1em;
@@ -189,11 +187,11 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #3498DB;
+  background-color: #3498db;
 }
 
 .About_background {
-  background-image: url('./Assets/about_background.png');
+  background-image: url("../Assets/about_background.png");
   background-size: cover;
   background-position: center;
   width: 100vw;
