@@ -60,21 +60,3 @@
     stroke-dashoffset: 0;
   }
 }
-
-@media screen and (max-width: 1280px) {
-  #loader-container {
-    max-width: 150px;
-  }
-  #loader {
-    width: 150px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  #loader-container {
-    max-width: 100px;
-  }
-  #loader {
-    width: 100px;
-  }
-}
