@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
   position: fixed;
+  top: 0;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
@@ -60,7 +61,7 @@ body {
   align-items: center;
 }
 
-.signup-btn {
+.signup-btn:link {
   /* background-color: #65cbdf;
   color: white; */
   background-color: #fff;
@@ -71,6 +72,7 @@ body {
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .signup-btn:hover {

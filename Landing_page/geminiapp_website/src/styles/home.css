@@ -1,0 +1,116 @@
+/* **************************** */
+/*         Section Hero         */
+/* **************************** */
+.section-hero {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../Assets/temp_hero.png);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.learn-more-btn:link,
+.learn-more-btn:visited {
+  background-color: #fff;
+  color: #65cbdf;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 15px;
+  padding: 0.5rem 2.4rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: solid 3px #65cbdf;
+  text-decoration: none;
+}
+
+.learn-more-btn:hover,
+.learn-more-btn:active {
+  background-color: #65cbdf;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content */
+.hero {
+  text-align: center;
+  padding: 80px 0 40px;
+}
+
+.hero h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 64px;
+  font-weight: 540;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.hero h1 span {
+  color: #4a7098;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #e91e63;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #d81b60;
+}
+
+.quick-intro {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto 40px;
+  line-height: 1.5;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.download-button {
+  display: block;
+  margin: 0 auto;
+  background-color: #ffffff;
+  color: #5dd3e7;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+  background-color: #5dd3e7;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.download-button:active {
+  transform: scale(0.95);
+}
+
+.video-box {
+  max-width: 560px;
+  margin: 20px auto;
+}

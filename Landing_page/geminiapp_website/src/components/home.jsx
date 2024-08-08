@@ -4,14 +4,29 @@ import "../styles/home.css";
 
 const Homepage = () => {
   return (
-    <div
-      className="full-page-background"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+    <body
+    // className="full-page-background"
+    // style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="container">
-        <section className="hero">
-          <h1>BRAINFORGE</h1>
-          <a>Learn More</a>
+        <section className="section-hero">
+          <img
+            className="hero-logo"
+            src="../Assets/hero_logo.png"
+            alt="Hero Logo"
+          ></img>
+          {/* ^ This is not working for some reason */}
+
+          <a href="#section-gallery" className="learn-more-btn">
+            Learn More
+          </a>
+        </section>
+        <section className="section-gallery" id="section-gallery">
+          <p>
+            EduQuest harnesses Google’s Gemini AI Model to revolutionize
+            learning. Our adaptive platform creates personalized game-like
+            experiences, tailoring challenges to each user's pace and style.
+          </p>
         </section>
         <section className="hero">
           <h1>
@@ -40,7 +55,7 @@ const Homepage = () => {
         </section>
         <button className="download-button">LEARN MORE</button>
       </div>
-    </div>
+    </body>
   );
 };
 
