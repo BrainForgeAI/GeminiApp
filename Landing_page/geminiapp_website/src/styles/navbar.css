@@ -10,14 +10,26 @@
   font-family: Patrick Hand SC, Arial, sans-serif;
   font-weight: 400;
   width: 100%;
-  margin: 0 auto;
+  transition: top 0.3s ease;
 }
 
-/* Add this new rule */
+.navbar.top {
+  top: 0;
+}
+
+.navbar.down {
+  top: -80px;
+}
+
+.navbar.up {
+  top: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
 }
+
 .navbar-left {
   display: flex;
   align-items: center;
@@ -41,7 +53,6 @@ body {
 .navbar-center a {
   color: #ffffff;
   text-decoration: none;
-  /* margin: 0 45px; */
   font-size: 25px;
   transition: color 0.3s ease;
   padding: 0 1.8rem;
@@ -62,8 +73,6 @@ body {
 }
 
 .signup-btn {
-  /* background-color: #65cbdf;
-  color: white; */
   background-color: #fff;
   color: #036e8f;
   border: none;
