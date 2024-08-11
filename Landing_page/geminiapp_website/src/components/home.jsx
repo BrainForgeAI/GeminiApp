@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import backgroundImage from "../Assets/background.png";
 import "../styles/home.css";
 
@@ -54,9 +55,9 @@ const Homepage = () => {
           </div>
         </section>
 
-        <button className="full-rounded play-now-button">
-        PLAY DEMO
-        </button>
+        <Link to="/demo" className="full-rounded play-now-button">
+          PLAY DEMO
+        </Link>
         
         {/* <button className="download-button">LEARN MORE</button> */}
       </div>
