@@ -8,6 +8,7 @@ import Gallery from "./components/gallery.jsx";
 import FAQ from "./components/FAQ.jsx";
 import Contact from "./components/contact.jsx";
 import SplashScreen from "./splashscreen.jsx";
+import Demo from "./components/demo.jsx";
 import "./styles/styles.css";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/demo" element={<Demo />} /> 
             </Routes>
           </>
         )}

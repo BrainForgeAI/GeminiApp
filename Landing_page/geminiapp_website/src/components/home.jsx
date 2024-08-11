@@ -6,7 +6,7 @@ const Homepage = () => {
   return (
     <body
     // className="full-page-background"
-    // style={{ backgroundImage: `url(${backgroundImage})` }}
+    // style={{ backgroundImage: url(${backgroundImage}) }}
     >
       <div className="container">
         <section className="section-hero">
@@ -53,7 +53,12 @@ const Homepage = () => {
             ></iframe>
           </div>
         </section>
-        <button className="download-button">LEARN MORE</button>
+
+        <button className="full-rounded play-now-button">
+        PLAY DEMO
+        </button>
+        
+        {/* <button className="download-button">LEARN MORE</button> */}
       </div>
     </body>
   );
