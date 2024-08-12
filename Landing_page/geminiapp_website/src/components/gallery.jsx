@@ -9,6 +9,8 @@ import characterModel from "../Assets/Gallery/character-model.png";
 import elderguyWithCane from "../Assets/Gallery/elderguywithcane.png";
 import firstNpc from "../Assets/Gallery/first-npc.png";
 import guardModel from "../Assets/Gallery/guard-model.png";
+import titlescreen from "../Assets/Gallery/titlescreen.png";
+import villagerDialogue from "../Assets/Gallery/villager-dialogue.png";
 
 const images = [
   gameui,
@@ -17,6 +19,8 @@ const images = [
   elderguyWithCane,
   firstNpc,
   guardModel,
+  titlescreen,
+  villagerDialogue,
 ];
 
 const Gallery = () => {
@@ -74,8 +78,8 @@ const Gallery = () => {
           </button>
         </div>
       )}
-      <div style={{ padding: '12px' }}>
-        <Masonry columnsCount={2} gutter="15px">
+      <div style={{ padding: '10px' }}>
+        <Masonry columnsCount={3} gutter="20px">
           {images.map((image, i) => (
             <img
               key={i}
