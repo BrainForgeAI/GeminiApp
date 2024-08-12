@@ -57,7 +57,7 @@ const Gallery = () => {
           <button
             className="gallery-btn"
             onClick={() => buttonCommand()}
-            style={{ position: 'absolute', top: '10px', right: '10px' }}
+            style={{ position: 'absolute', top: '100px', right: '10px' }}
           >
             Exit
           </button>
