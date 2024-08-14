@@ -4,6 +4,7 @@
 .section-hero {
   height: 100vh;
   width: 100vw;
+  /* margin-top: 4rem; */
   position: relative;
 }
 
@@ -21,8 +22,16 @@
 
 .hero-content {
   position: relative;
-  top: 50%;
+  top: 40%;
   transform: translate(0, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+}
+
+.hero-logo {
+  max-width: 50%;
 }
 
 .learn-more-btn:link,
@@ -34,7 +43,7 @@
   text-transform: uppercase;
   border-radius: 15px;
   padding: 0.5rem 2.4rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   border: solid 3px #65cbdf;
   text-decoration: none;
@@ -44,7 +53,109 @@
 .learn-more-btn:active {
   background-color: #65cbdf;
   color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* **************************** */
+/*       Section Gallery        */
+/* **************************** */
+
+.section-gallery {
+  height: 90vh;
+  width: 100vw;
+  background-color: #7bd1fb;
+  /* background: linear-gradient(
+    180deg,
+    rgba(118, 140, 202, 1) 0%,
+    rgba(123, 209, 251, 1) 100%
+  ); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.4rem;
+}
+
+.section-gallery p {
+  color: #2b2d5d;
+  font-family: serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  max-width: 50%;
+  margin-top: 3.4rem;
+}
+
+.gallery-img {
+  width: 50%;
+}
+
+.video-box {
+  max-width: 80%;
+  /* margin: 20px auto; */
+}
+
+/* **************************** */
+/*       Section CTA        */
+/* **************************** */
+.section-CTA {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #25264d;
+  color: white;
+  padding: 20rem;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh; /* Adjust this if you don't want it to cover the full viewport height */
+  box-sizing: border-box;
+}
+
+.CTA-content {
+  max-width: 50%;
+  z-index: 2;
+}
+
+.CTA-content h1 {
+  font-size: 4vw; /* Responsive font size */
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.CTA-content h1 span {
+  color: #c300ff;
+}
+
+.CTA-content p {
+  font-size: 1.5vw; /* Responsive font size */
+  line-height: 1.6;
+  margin: 20px 0;
+  max-width: 600px; /* Adjust max-width to be responsive */
+}
+
+.CTA-text-img {
+  width: 30vw; /* Responsive width */
+  margin-top: 20px;
+}
+
+.CTA-gameboy-img {
+  width: 35vw; /* Responsive width */
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.section-CTA::before {
+  content: "";
+  position: absolute;
+  width: 70vw;
+  height: 70vw; /* Responsive size */
+  background: radial-gradient(circle at center, #6e00a2 0%, transparent 70%);
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%);
+  z-index: 0;
 }
 
 /* Main Content */
@@ -127,11 +238,6 @@
 
 */
 
-.video-box {
-  max-width: 560px;
-  margin: 20px auto;
-}
-
 .full-rounded {
   display: block;
   margin: 20px auto;
@@ -144,10 +250,11 @@
   text-transform: uppercase;
   border-radius: 2em;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
   box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
+  text-decoration: none;
 }
 
 .full-rounded:active {

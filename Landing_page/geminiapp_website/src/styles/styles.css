@@ -1,12 +1,12 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: blueviolet;
-    color: #fff;
-  }
-  .App {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #768cca;
+  color: #fff;
+}
+.App {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
