@@ -11,16 +11,18 @@ const Homepage = () => {
     >
       <div className="container">
         <section className="section-hero">
-          <img
-            className="hero-logo"
-            src="../Assets/hero_logo.png"
-            alt="Hero Logo"
-          ></img>
-          {/* ^ This is not working for some reason */}
+          <div className="hero-content">
+            <img
+              className="hero-logo"
+              src="../Assets/hero_logo.png"
+              alt="Hero Logo"
+            ></img>
+            {/* ^ This is not working for some reason */}
 
-          <a href="#section-gallery" className="learn-more-btn">
-            Learn More
-          </a>
+            <a href="#section-gallery" className="learn-more-btn">
+              Learn More
+            </a>
+          </div>
         </section>
         <section className="section-gallery" id="section-gallery">
           <p>
@@ -58,7 +60,7 @@ const Homepage = () => {
         <Link to="/demo" className="full-rounded play-now-button">
           PLAY DEMO
         </Link>
-        
+
         {/* <button className="download-button">LEARN MORE</button> */}
       </div>
     </body>

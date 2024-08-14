@@ -1,21 +1,28 @@
-
 /* **************************** */
 /*         Section Hero         */
 /* **************************** */
 .section-hero {
   height: 100vh;
   width: 100vw;
-  background-image: url(../Assets/temp_hero.png);
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
-.hero-logo {
-  max-width: 100%;
-  height: auto;
+.section-hero::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../Assets/hero_1000px_150ms.gif);
+  background-size: cover;
+  filter: blur(2px);
+}
+
+.hero-content {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .learn-more-btn:link,
@@ -142,7 +149,6 @@
   text-align: center;
   position: relative;
 }
-
 
 .full-rounded:active {
   transform: scale(0.95);
