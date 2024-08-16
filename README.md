@@ -1,6 +1,5 @@
 # GeminiApp
 
-Google Gemini AI App Hackathon Submission
 
 ## Getting started
 
