@@ -10,6 +10,7 @@ import Contact from "./components/contact.jsx";
 import SplashScreen from "./splashscreen.jsx";
 import Demo from "./components/demo.jsx";
 import "./styles/styles.css";
+import SignupPage from "./components/Sign_up";
 
 function App() {
   const [isBooting, setSplash] = useState(true);
@@ -38,6 +39,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/demo" element={<Demo />} /> 
+              <Route path="/signup" element ={<SignupPage/>}/>
             </Routes>
           </>
         )}
