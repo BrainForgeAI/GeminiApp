@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Patrick+Hand+SC&family=Varela+Round&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #65cbdf;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.full-page-background {
+  background-image: url("../Assets/background.png");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .video-box {
+    width: 100%;
+  }
+}
+
+/* About section styles */
+.about-container {
+  max-width: 1200px;
+  width: 90%;
+  text-align: center;
+  padding: 40px;
+  font-family: "Inter", sans-serif;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.main-title {
+  font-size: 50px;
+  color: #ffffff;
+  margin: auto;
+  text-shadow: 2px 2px 2px #000000;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 50px;
+  color: #ffffff;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.content {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.cta-title {
+  font-size: 22px;
+  color: #ffffff;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.cta-button {
+  background-color: #5dade2;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #3498db;
+}
+
+.About_background {
+  background-image: url("../Assets/about_background.png");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
