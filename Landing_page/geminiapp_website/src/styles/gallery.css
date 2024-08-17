@@ -1,7 +1,7 @@
 .background-container {
   width: 100%;
   height: 200vh; /* Full viewport height */
-  background-image: url('../Assets/temp_hero.png'); /* Replace with your background image path */
+  background-image: url("../Assets/background.png"); /* Replace with your background image path */
   background-size: cover; /* Cover the entire container */
   background-position: center; /* Center the image */
   background-repeat: repeat-y; /* Prevent image from repeating */

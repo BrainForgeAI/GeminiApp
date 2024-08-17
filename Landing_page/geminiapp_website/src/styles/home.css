@@ -130,6 +130,7 @@
   line-height: 1.6;
   margin: 20px 0;
   max-width: 600px; /* Adjust max-width to be responsive */
+  text-align: start;
 }
 
 .CTA-text-img {
