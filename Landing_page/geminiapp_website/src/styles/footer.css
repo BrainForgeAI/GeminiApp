@@ -1,0 +1,35 @@
+.section-footer {
+  height: 20vh;
+  background-color: #036e8f;
+  background-color: #000;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2vw;
+}
+.copyright {
+  color: 7bd1fb;
+  color: #a7a7a7;
+}
+
+.logo-img {
+  width: 10vw;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2vw;
+  transition: all 0.3s ease;
+}
+
+.footer-link:first-child {
+  margin-right: 1vw;
+}
+
+.footer-link:hover {
+  font-size: 3vw;
+}
