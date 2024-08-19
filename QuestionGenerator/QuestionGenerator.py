@@ -6,8 +6,8 @@ from google.generativeai.types.generation_types import GenerateContentResponse
 from dotenv import load_dotenv
 import os
 import json
-from prompts import question_persona, question_guidelines
-from tools import generate_with_retry
+from .prompts import question_persona, question_guidelines
+from .tools import generate_with_retry
 
 
 load_dotenv()
@@ -63,7 +63,9 @@ class QuestionGenerator:
 
         {self.questions_so_far}
         
-        Additional info. (If "answer", that means the user provided an answer and you continue the question generation based on the correctness of the answer. If the answer is correct, permit the user to move on. If the answer is incorrect, reject the user).
+        Additional info.
+        (If "answer", that means the user provided an answer and you continue the question generation based on the correctness of the answer. If the answer is correct, permit the user to move on. If the answer is incorrect, reject the user).
+        (If "multiple-choice", that means you should generate a multiple choice question with 4 possible options. Add these options as mcq_options = dict() to the JSON output).
         
         {', '.join([f'{key}: {value}' for key, value in kwargs.items()])}
 
