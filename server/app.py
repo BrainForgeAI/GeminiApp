@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, request, jsonify, Response
 
-# # Add the parent directory to the Python path
+# Add the parent directory to the Python path.
 # sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from QuestionGenerator.QuestionGenerator import QuestionGenerator
 from QuestionGenerator.load_syllabus import load_syllabus
@@ -59,6 +59,20 @@ def get_question() -> Response:
     if qg is None:
         return jsonify({'error': 'Syllabus not loaded'}), 400
     _, _, current_question = qg.generate_response_questions()
+    
+    return jsonify(current_question)
+
+@app.route('/get_question_mcq', methods=['GET'])
+def get_question_mcq() -> Response:
+    """
+    Get request for multiple choice question prompt.
+    
+    :return jsonify(current_question)
+    """
+    global current_question, qg
+    if qg is None:
+        return jsonify({'error': 'Syllabus not loaded'}), 400
+    _, _, current_question = qg.generate_response_questions(multiple_choice=True)
     
     return jsonify(current_question)
 
