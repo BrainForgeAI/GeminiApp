@@ -5,10 +5,7 @@ import "../styles/home.css";
 
 const Homepage = () => {
   return (
-    <body
-    // className="full-page-background"
-    // style={{ backgroundImage: url(${backgroundImage}) }}
-    >
+    <body>
       <div className="container">
         <section className="section-hero">
           <div className="hero-content">
