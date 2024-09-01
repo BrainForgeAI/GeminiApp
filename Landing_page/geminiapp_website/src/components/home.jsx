@@ -23,15 +23,17 @@ const Homepage = () => {
         </section>
         <section className="section-gallery" id="section-gallery">
           <p>
-            EduQuest harnesses Google's Gemini AI Model to revolutionize
-            learning. Our adaptive platform creates personalized game-like
-            experiences, tailoring challenges to each user's pace and style.
+            EduQuest harnesses <span>G</span>
+            <span>o</span>
+            <span>o</span>
+            <span>g</span>
+            <span>l</span>
+            <span>e</span>
+            <span>'</span>
+            <span>s</span> Gemini AI Model to revolutionize learning. Our
+            adaptive platform creates personalized game-like experiences,
+            tailoring challenges to each user's pace and style.
           </p>
-          {/* <img
-            className="gallery-img"
-            src={require("../Assets/gallery-hero.png")}
-            alt="Image of game frame"
-          /> */}
           <div className="video-box">
             <iframe
               width="560"

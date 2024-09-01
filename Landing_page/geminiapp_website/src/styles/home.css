@@ -31,12 +31,12 @@
 }
 
 .hero-logo {
-  max-width: 40%;
+  max-width: 50%;
   background-image: url(../Assets/Rectangle\ 302gradient.png);
   /* background-position: top 10px right 0; */
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 50px 0;
+  padding: 50px 50px;
 }
 
 .learn-more-btn:link,
@@ -71,11 +71,11 @@
   height: 90vh;
   width: 100vw;
   background-color: #7bd1fb;
-  /* background: linear-gradient(
-    180deg,
-    rgba(118, 140, 202, 1) 0%,
-    rgba(123, 209, 251, 1) 100%
-  ); */
+  background: linear-gradient(
+    0deg,
+    rgba(87, 216, 202, 1) 0%,
+    rgba(118, 140, 202, 1) 54%
+  );
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,21 +83,41 @@
 }
 
 .section-gallery p {
-  color: #2b2d5d;
-  font-family: serif;
-  font-weight: 700;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
   font-size: 2.4rem;
   max-width: 50%;
   margin-top: 3.4rem;
 }
 
-.gallery-img {
-  width: 50%;
+.section-gallery p span {
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.section-gallery p span:nth-of-type(1),
+.section-gallery p span:nth-of-type(4) {
+  color: #4185f4;
+}
+
+.section-gallery p span:nth-of-type(2),
+.section-gallery p span:nth-of-type(6) {
+  color: #db4537;
+}
+
+.section-gallery p span:nth-of-type(3),
+.section-gallery p span:nth-of-type(8) {
+  color: #f4b400;
+}
+
+.section-gallery p span:nth-of-type(5),
+.section-gallery p span:nth-of-type(7) {
+  color: #129d58;
 }
 
 .video-box {
-  max-width: 80%;
-  /* margin: 20px auto; */
+  width: 80%;
+  margin: 20px auto;
 }
 
 /* **************************** */
