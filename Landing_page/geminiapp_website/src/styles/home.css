@@ -17,7 +17,7 @@
   height: 100%;
   background-image: url(../Assets/hero_1000px_150ms.gif);
   background-size: cover;
-  filter: blur(2px);
+  filter: blur(1px);
 }
 
 .hero-content {
@@ -68,7 +68,8 @@
 /* **************************** */
 
 .section-gallery {
-  height: 90vh;
+  /* height: 90vh; */
+  padding: 5vh 0 10vh 0;
   width: 100vw;
   background-color: #7bd1fb;
   background: linear-gradient(
