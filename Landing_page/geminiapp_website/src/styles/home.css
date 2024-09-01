@@ -27,35 +27,39 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8rem;
+  gap: 4rem;
 }
 
 .hero-logo {
   max-width: 40%;
   background-image: url(../Assets/Rectangle\ 302gradient.png);
-  background-size: 100%;
+  /* background-position: top 10px right 0; */
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 50px 0;
 }
 
 .learn-more-btn:link,
 .learn-more-btn:visited {
-  background-color: #fff;
-  color: #65cbdf;
-  font-size: 1.8rem;
-  font-weight: 700;
+  background-color: #000;
+  color: #fff;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  font-weight: 600;
   text-transform: uppercase;
-  border-radius: 15px;
+  border-radius: 9px;
   padding: 0.5rem 2.4rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-  border: solid 3px #65cbdf;
+  border: solid 3px #fff;
   text-decoration: none;
 }
 
 .learn-more-btn:hover,
 .learn-more-btn:active {
   background-color: #65cbdf;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
