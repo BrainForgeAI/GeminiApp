@@ -31,7 +31,10 @@
 }
 
 .hero-logo {
-  max-width: 50%;
+  max-width: 40%;
+  background-image: url(../Assets/Rectangle\ 302gradient.png);
+  background-size: 100%;
+  padding: 50px 0;
 }
 
 .learn-more-btn:link,
