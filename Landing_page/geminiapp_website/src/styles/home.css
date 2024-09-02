@@ -93,13 +93,14 @@
 }
 
 .section-gallery p span {
+  display: inline-block;
   font-size: 3.2rem;
   text-shadow: -1px -1px 0 #fff, 1px 1px 1px #000;
   transition: all 0.2s ease;
 }
 
 .section-gallery p span:hover {
-  font-size: 80%;
+  transform: scale(130%);
 }
 
 .section-gallery p span:nth-of-type(1),
