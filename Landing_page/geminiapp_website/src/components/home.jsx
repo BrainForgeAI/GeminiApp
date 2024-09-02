@@ -57,33 +57,23 @@ const Homepage = () => {
               We make education engaging and accessible for everyone. The joy of
               learning is something everyone deserves to experience
             </p>
-            <img
+            {/* <img
               className="CTA-text-img"
               src={require("../Assets/strategy_and_innovation.png")}
               alt="Strategy and innovation"
+            /> */}
+          </div>
+          <div className="CTA-box">
+            <img
+              className="CTA-gameboy-img"
+              src={require("../Assets/CTA-img.png")}
+              alt="Image of handheld gaming device with game popping out"
             />
-            <Link to="/demo" className="full-rounded play-now-button">
+            <Link to="/demo" className="full-rounded">
               PLAY DEMO
             </Link>
           </div>
-          <img
-            className="CTA-gameboy-img"
-            src={require("../Assets/gameboy.png")}
-            alt="Image of handheld gaming device with game popping out"
-          />
         </section>
-        {/* <section>
-          <div className="video-box">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/IBP5NUDP28A?si=FXJjmZIJ63ruJ_F5"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </section> */}
       </div>
     </body>
   );
