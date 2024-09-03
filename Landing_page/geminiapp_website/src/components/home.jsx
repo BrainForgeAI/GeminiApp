@@ -5,10 +5,7 @@ import "../styles/home.css";
 
 const Homepage = () => {
   return (
-    <body
-    // className="full-page-background"
-    // style={{ backgroundImage: url(${backgroundImage}) }}
-    >
+    <body>
       <div className="container">
         <section className="section-hero">
           <div className="hero-content">
@@ -26,20 +23,22 @@ const Homepage = () => {
         </section>
         <section className="section-gallery" id="section-gallery">
           <p>
-            EduQuest harnesses Google's Gemini AI Model to revolutionize
-            learning. Our adaptive platform creates personalized game-like
-            experiences, tailoring challenges to each user's pace and style.
+            EduQuest harnesses <span>G</span>
+            <span>o</span>
+            <span>o</span>
+            <span>g</span>
+            <span>l</span>
+            <span>e</span>
+            <span>'</span>
+            <span>s</span> Gemini AI Model to revolutionize learning. Our
+            adaptive platform creates personalized game-like experiences,
+            tailoring challenges to each user's pace and style.
           </p>
-          {/* <img
-            className="gallery-img"
-            src={require("../Assets/gallery-hero.png")}
-            alt="Image of game frame"
-          /> */}
           <div className="video-box">
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/IBP5NUDP28A?si=FXJjmZIJ63ruJ_F5"
+              src="https://www.youtube.com/embed/AKQTWVEM-Xo?si=Zu95CqAIO-Ji10_Z"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -58,33 +57,23 @@ const Homepage = () => {
               We make education engaging and accessible for everyone. The joy of
               learning is something everyone deserves to experience
             </p>
-            <img
+            {/* <img
               className="CTA-text-img"
               src={require("../Assets/strategy_and_innovation.png")}
               alt="Strategy and innovation"
+            /> */}
+          </div>
+          <div className="CTA-box">
+            <img
+              className="CTA-gameboy-img"
+              src={require("../Assets/CTA-img.png")}
+              alt="Image of handheld gaming device with game popping out"
             />
-            <Link to="/demo" className="full-rounded play-now-button">
+            <Link to="/demo" className="full-rounded">
               PLAY DEMO
             </Link>
           </div>
-          <img
-            className="CTA-gameboy-img"
-            src={require("../Assets/gameboy.png")}
-            alt="Image of handheld gaming device with game popping out"
-          />
         </section>
-        {/* <section>
-          <div className="video-box">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/IBP5NUDP28A?si=FXJjmZIJ63ruJ_F5"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </section> */}
       </div>
     </body>
   );
