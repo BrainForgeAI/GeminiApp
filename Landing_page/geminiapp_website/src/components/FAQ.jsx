@@ -35,7 +35,7 @@ const FAQ = () => {
       open: false
     },
     {
-      question: 'Will Aspectus do my homework for me??',
+      question: 'Will Aspectus do my homework for me?',
       answer: "As much as we'd love to help, Aspectus is here to teach you, not do your homework! But with the right questions and practice, you'll be acing your assignments in no time—no shortcuts allowed!",
       open: false
     },
