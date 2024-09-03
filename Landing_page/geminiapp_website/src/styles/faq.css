@@ -12,10 +12,14 @@
     border-radius: 4px;
     transition: all 0.3s ease;
     cursor: pointer;
+    background-color: black;
+    color: white;
+    position: relative;
 }
 
 .faq.open {
-    background-color: #000000;
+    background-color: #f9f9f9;
+    color: black;
 }
 
 .faq-question {
@@ -23,11 +27,24 @@
     font-weight: bold;
     font-family: 'Handjet', sans-serif;
     text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-arrow.open {
+    transform: rotate(180deg);
 }
 
 .faq-answer {
     padding-top: 10px;
     font-size: 1.5rem;
-    border-top: 1px solid white;
     font-family: 'Handjet', sans-serif;
+    border-top: 2px solid black;
+    margin-top: 10px;
 }
