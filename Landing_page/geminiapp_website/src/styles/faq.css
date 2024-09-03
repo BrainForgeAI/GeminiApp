@@ -23,7 +23,7 @@
 }
 
 .faq-question {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     font-family: 'Handjet', sans-serif;
     text-transform: uppercase;
@@ -43,7 +43,7 @@
 
 .faq-answer {
     padding-top: 10px;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-family: 'Handjet', sans-serif;
     border-top: 2px solid black;
     margin-top: 10px;
