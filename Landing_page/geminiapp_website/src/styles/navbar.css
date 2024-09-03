@@ -1,92 +1,108 @@
-.navbar {
-  display: flex;
+.Navbar {
   position: fixed;
-  top: 0;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #036e8f;
-  color: #ffffff;
-  font-family: Patrick Hand SC, Arial, sans-serif;
-  font-weight: 400;
-  width: 100%;
-  transition: top 0.3s ease;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
+  width: 910px;
+  height: 80px;
+  max-width: 2000px;
+  padding: 1rem;
+  background: linear-gradient(90deg, rgba(59,130,246,0.8) 0%, rgba(16,185,129,0.8) 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.navbar.top {
-  top: 0;
+.Shelf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
-.navbar.down {
-  top: -80px;
+.Logo-Container img {
+  width: 33px;
+  height: 36px;
 }
 
-.navbar.up {
-  top: 0;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-left {
+.NavBar-Links-Container {
   display: flex;
   align-items: center;
+  gap: 5rem;
 }
 
-.logo {
-  height: 24px;
-  margin-right: 10px;
-}
-
-.brand-name {
-  font-size: 25px;
+.NavBar-Links-Container a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Handjet', monospace;
+  font-size: 30px;
   font-weight: bold;
-}
-
-.navbar-center {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-center a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 25px;
   transition: color 0.3s ease;
-  padding: 0 1.8rem;
-  border-right: solid white 2px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-.navbar-center a:first-child {
-  border-left: solid white 2px;
+
+.NavBar-Links-Container a:hover,
+.NavBar-Links-Container a.active {
+  color: #fde047;
 }
 
-.navbar-center a:hover {
-  color: #65cbdf;
+.NavBar-Links-Container a:first-child {
+  color: #fde047;
 }
 
-.navbar-right {
-  display: flex;
-  align-items: center;
+
+.NavBar-Links-Container a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.signup-btn {
-  background-color: #fff;
-  color: #036e8f;
+
+
+.SignIn_Button {
+  background-color: black;
+  color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 999px;
-  font-size: 20px;
+  width: 128px;
+  height: 46px;
+  font-family: 'Handjet', monospace;
+  font-size: 30px; /* Adjusted to fit within the smaller button size */
+  font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Removed padding since we're setting exact dimensions */
 }
 
-.signup-btn:hover {
-  background-color: #65cbdf;
-  color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.SignIn_Button{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+.SignIn_Button:hover {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .Navbar {
+    width: 95%;
+    padding: 0.5rem;
+  }
+
+  .Shelf {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .NavBar-Links-Container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
