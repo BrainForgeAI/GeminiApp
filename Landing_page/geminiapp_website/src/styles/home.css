@@ -30,9 +30,8 @@
 }
 
 .hero-logo {
-  max-width: 50%;
+  width: 67rem;
   background-image: url(../Assets/Rectangle\ 302gradient.png);
-  /* background-position: top 10px right 0; */
   background-size: cover;
   background-repeat: no-repeat;
   padding: 50px 50px;
@@ -67,7 +66,6 @@
 /* **************************** */
 
 .section-gallery {
-  padding: 5vh 0 10vh 0;
   width: 100vw;
   background-color: #7bd1fb;
   background: linear-gradient(0deg, #57d8ca 0%, #768cca 54%);
@@ -153,7 +151,7 @@
   text-shadow: 1px 1px 1px #000;
   overflow: hidden;
   width: 100vw;
-  padding: 7rem 0;
+  padding: 5% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -302,9 +300,66 @@
     font-size: 3.7rem;
   }
 
+  .hero-logo {
+    width: 50%;
+  }
+}
+
+/* ******************************* */
+/*   BELOW 752 PIXELS  */
+/* ******************************* */
+
+@media (max-width: 47em) {
+  .hero-logo {
+    width: 90%;
+  }
+
+  .section-CTA .container {
+    flex-direction: column;
+  }
+
+  .CTA-content {
+    max-width: 80%;
+  }
+
+  .CTA-content h1 {
+    font-size: 7vw;
+  }
+
+  .CTA-content p {
+    font-size: 4.5vw;
+  }
+}
+
+/* ******************************* */
+/*   BELOW 608 PIXELS  */
+/* ******************************* */
+
+@media (max-width: 38em) {
   .section-gallery p {
+    font-size: 2rem;
+    margin-top: 0;
   }
 
   .section-gallery p span {
+    font-size: 2.5rem;
+  }
+
+  .video-box iframe {
+    width: 90%;
+  }
+}
+
+/* ******************************* */
+/*   BELOW 432 PIXELS  */
+/* ******************************* */
+
+@media (max-width: 27em) {
+  .section-gallery p {
+    font-size: 4vw;
+  }
+
+  .section-gallery p span {
+    font-size: 4.2vw;
   }
 }
