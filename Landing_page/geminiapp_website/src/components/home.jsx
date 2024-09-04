@@ -2,26 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 import backgroundImage from "../Assets/background.png";
 import "../styles/home.css";
+import heroLogo from "../Assets/hero_logo.png";
+import ctaImage from "../Assets/CTA-img.png";
+import galleryIslands from "../Assets/gallery_frame.png";
 
 const Homepage = () => {
   return (
     <body>
-      <div className="container">
-        <section className="section-hero">
-          <div className="hero-content">
-            <img
-              className="hero-logo"
-              src={require("../Assets/hero_logo.png")}
-              alt="Hero Logo"
-            ></img>
-            {/* ^ This is not working for some reason */}
+      <section className="section-hero">
+        <div className="hero-content">
+          <img className="hero-logo" src={heroLogo} alt="Hero Logo" />
+          <a href="#section-gallery" className="learn-more-btn">
+            Learn More
+          </a>
+        </div>
+      </section>
 
-            <a href="#section-gallery" className="learn-more-btn">
-              Learn More
-            </a>
-          </div>
-        </section>
-        <section className="section-gallery" id="section-gallery">
+      <section className="section-gallery" id="section-gallery">
+        <div className="container">
           <p>
             EduQuest harnesses <span>G</span>
             <span>o</span>
@@ -44,8 +42,16 @@ const Homepage = () => {
               allowFullScreen
             ></iframe>
           </div>
-        </section>
-        <section className="section-CTA">
+        </div>
+        <img
+          className="gallery-islands"
+          src={galleryIslands}
+          alt="Pixel art islands"
+        />
+      </section>
+
+      <section className="section-CTA">
+        <div className="container">
           <div className="CTA-content">
             <h1>
               PLAY <span>SMART.</span> GROW <span>SMARTER.</span>
@@ -55,26 +61,21 @@ const Homepage = () => {
               learning. Our adaptive platform creates personalized game-like
               experiences, tailoring challenges to each user's pace and style.
               We make education engaging and accessible for everyone. The joy of
-              learning is something everyone deserves to experience
+              learning is something everyone deserves to experience.
             </p>
-            {/* <img
-              className="CTA-text-img"
-              src={require("../Assets/strategy_and_innovation.png")}
-              alt="Strategy and innovation"
-            /> */}
           </div>
           <div className="CTA-box">
             <img
               className="CTA-gameboy-img"
-              src={require("../Assets/CTA-img.png")}
-              alt="Image of handheld gaming device with game popping out"
+              src={ctaImage}
+              alt="Handheld gaming device"
             />
             <Link to="/demo" className="full-rounded">
               PLAY DEMO
             </Link>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </body>
   );
 };
