@@ -1,28 +1,29 @@
 .section-footer {
   height: 20vh;
   background-color: #036e8f;
-  background-color: #000;
+  /* background-color: #000; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-items: center;
   color: #fff;
   font-weight: 700;
-  font-size: 1.2vw;
+  font-size: 2rem;
 }
 .copyright {
-  color: 7bd1fb;
-  color: #a7a7a7;
+  color: #7bd1fb;
+  /* color: #a7a7a7; */
 }
 
 .logo-img {
-  width: 10vw;
+  width: 30rem;
 }
 
 .footer-link {
+  display: inline-block;
   text-decoration: none;
   color: #fff;
-  font-size: 2vw;
+  font-size: 3rem;
   transition: all 0.3s ease;
 }
 
@@ -31,5 +32,38 @@
 }
 
 .footer-link:hover {
-  font-size: 3vw;
+  transform: scale(140%);
+}
+
+/* ******************************* */
+/*   BELOW 752 PIXELS  */
+/* ******************************* */
+
+@media (max-width: 47em) {
+  .logo-img {
+    width: 90%;
+  }
+}
+
+/* ******************************* */
+/*   BELOW 608 PIXELS  */
+/* ******************************* */
+
+@media (max-width: 38em) {
+  .section-footer {
+    font-size: 1.5rem;
+  }
+}
+
+/* ******************************* */
+/*   BELOW 432 PIXELS  */
+/* ******************************* */
+
+@media (max-width: 27em) {
+  .section-footer {
+    grid-template-columns: 1fr;
+  }
+  .logo-img {
+    width: 20rem;
+  }
 }
