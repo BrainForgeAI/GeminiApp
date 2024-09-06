@@ -1,9 +1,16 @@
 import React from 'react'
 import BrainForgeLogo from '../Assets/Brainforge_Logo.png'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
 
-const navbar = () => {
+const Navbar = () => {
+
+  const navigate = useNavigate();
+
+  const handleSignInClick = () => {
+    navigate("/signup");
+  }
+
   return (
     <div className='Navbar Shelf'>
 
@@ -17,7 +24,7 @@ const navbar = () => {
         <Link to="/gallery">GALLERY</Link>
         <Link to="/faq">FAQ</Link>
         <Link to="/contact">CONTACT</Link>
-        <button className='SignIn_Button'>Sign In</button>
+        <button className='SignIn_Button' onClick = {handleSignInClick} >Sign In</button>
       </div>
 
 
@@ -27,4 +34,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default Navbar
