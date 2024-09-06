@@ -1,13 +1,5 @@
 import React, { useState } from "react";
 import "../styles/signup.css";
-import {
-  Container,
-  TextField,
-  Button,
-  Typography,
-  Box,
-  Link,
-} from "@mui/material";
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -35,29 +27,49 @@ const SignupPage = () => {
         <div className="form-box">
           <form onSubmit={handleSubmit}>
             <div className="form-subbox">
-              <label className="form-label" for="fname">
+              <label className="form-label" htmlFor="fname">
                 Name
               </label>
               <input
                 className="form-input"
                 type="text"
                 id="fname"
+                name="name"
                 placeholder="John Doe"
-              ></input>
+                value={formData.name}
+                onChange={handleChange}
+              />
             </div>
             <div className="form-subbox">
-              <label className="form-label" for="femail">
+              <label className="form-label" htmlFor="femail">
                 Email
               </label>
               <input
                 className="form-input"
-                type="text"
+                type="email"
                 id="femail"
+                name="email"
                 placeholder="JohnDoe@email.com"
-              ></input>
+                value={formData.email}
+                onChange={handleChange}
+              />
             </div>
             <div className="form-subbox">
-              <button>Sign Up</button>
+              <label className="form-label" htmlFor="fpassword">
+                Password
+              </label>
+              <input
+                className="form-input"
+                type="password"
+                id="fpassword"
+                name="password"
+                placeholder="Enter your password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-subbox">
+              <button type="submit">Sign Up</button>
             </div>
           </form>
         </div>
