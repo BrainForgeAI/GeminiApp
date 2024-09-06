@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/faq.css";
 import Questions from './questions.jsx';
+import '../styles/gallery.css';
 
 const FAQ = () => {
   const [faqs, setFaqs] = useState([
@@ -50,10 +51,13 @@ const FAQ = () => {
   };
 
   return (
+    <div className="fullscreen-background">
+       <div className="top-gradient"></div>
     <div className="FAQ">
       {faqs.map((faq, i) => (
         <Questions faq={faq} index={i} key={i} toggleFAQ={toggleFAQ} />
       ))}
+    </div>
     </div>
   );
 }
