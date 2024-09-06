@@ -60,8 +60,8 @@ body {
 
 /* About section styles */
 .about-container {
-  max-width: 2000px;
-  width: 95%;
+  max-width: 1400px;
+  width: 90%;
   text-align: center;
   padding: 50px;
   font-family: Handjet, sans-serif;
@@ -69,7 +69,7 @@ body {
   border-radius: 50px; 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
-  max-height: 90vh;
+  max-height: 70vh;
   backdrop-filter: blur(10px);
   border: 4px solid rgba(128, 128, 128, 0.5);
 }
@@ -78,7 +78,7 @@ body {
 
 
 .main-title {
-  font-size: 70px;
+  font-size: 60px;
   color: #96CB95;
   margin: auto;
   text-shadow: 3px 3px 3px #000000;
@@ -86,7 +86,7 @@ body {
 }
 
 .section-title {
-  font-size: 70px;
+  font-size: 60px;
   color: #96CB95;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -94,7 +94,7 @@ body {
 }
 
 .content {
-  font-size: 35px;
+  font-size: 30px;
   line-height: 1.6;
   color: #ffffff;
   text-shadow: 2px 2px 2px #000000;

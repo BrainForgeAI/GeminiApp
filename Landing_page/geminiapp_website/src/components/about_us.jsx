@@ -33,7 +33,8 @@ const About = () => {
           </p>
         </div>
 
-        <h2 className="section-title">Our Story ⚔️</h2>
+        <h2 className="section-title">Our Story ⚔️
+        </h2>
 
         <div className="content">
           <p>
