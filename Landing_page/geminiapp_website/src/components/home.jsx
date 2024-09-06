@@ -5,6 +5,8 @@ import "../styles/home.css";
 import heroLogo from "../Assets/hero_logo.png";
 import ctaImage from "../Assets/CTA-img.png";
 import galleryIslands from "../Assets/gallery_frame.png";
+import Footer from "./footer";
+
 
 const Homepage = () => {
   return (
@@ -76,7 +78,9 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </body>
+    
   );
 };
 
