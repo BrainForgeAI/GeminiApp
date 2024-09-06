@@ -4,7 +4,6 @@
 .section-hero {
   height: 100vh;
   width: 100vw;
-  /* margin-top: 4rem; */
   position: relative;
 }
 
@@ -31,9 +30,8 @@
 }
 
 .hero-logo {
-  max-width: 50%;
+  width: 67rem;
   background-image: url(../Assets/Rectangle\ 302gradient.png);
-  /* background-position: top 10px right 0; */
   background-size: cover;
   background-repeat: no-repeat;
   padding: 50px 50px;
@@ -68,26 +66,38 @@
 /* **************************** */
 
 .section-gallery {
-  /* height: 90vh; */
-  padding: 5vh 0 10vh 0;
   width: 100vw;
   background-color: #7bd1fb;
-  background: url(../Assets/gallery_frame.png),
-    linear-gradient(0deg, #57d8ca 0%, #768cca 54%);
+  background: linear-gradient(0deg, #57d8ca 0%, #768cca 54%);
   display: flex;
   background-size: cover;
   background-repeat: no-repeat;
   flex-direction: column;
   align-items: center;
+
+  position: relative;
+  z-index: 1;
+}
+
+.section-gallery .container {
+  z-index: 3;
   gap: 3.4rem;
 }
 
+.section-gallery img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  z-index: 2;
+}
 .section-gallery p {
   color: #fff;
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 3rem;
-  max-width: 50%;
+  max-width: 70%;
   margin-top: 3.4rem;
   text-shadow: 1px 1px 1px #000;
 }
@@ -124,31 +134,35 @@
 }
 
 .video-box {
-  width: 80%;
-  padding: 20px auto;
+  width: 100%;
 }
 
 .video-box iframe {
   box-shadow: 0 0 10px #000;
+  width: 70%;
 }
 
 /* **************************** */
 /*       Section CTA        */
 /* **************************** */
 .section-CTA {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: #57d8ca;
   color: white;
   text-shadow: 1px 1px 1px #000;
-  padding: 20rem;
   overflow: hidden;
   width: 100vw;
-  height: 100vh; /* Adjust this if you don't want it to cover the full viewport height */
-  box-sizing: border-box;
+  padding: 5% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   position: relative;
+}
+
+.section-CTA .container {
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .CTA-content {
@@ -169,24 +183,14 @@
 }
 
 .CTA-content p {
-  font-size: 2vw; /* Responsive font size */
+  font-size: 3vw;
   line-height: 1.6;
   margin: 20px 0;
-  max-width: 600px; /* Adjust max-width to be responsive */
   text-align: start;
 }
 
-.CTA-text-img {
-  width: 30vw; /* Responsive width */
-  margin-top: 20px;
-}
-
 .CTA-gameboy-img {
-  width: 35vw; /* Responsive width */
-  /* position: absolute;
-  right: 10%;
-  top: 50%;
-  transform: translateY(-50%); */
+  max-width: 100%;
   z-index: 1;
   position: relative;
 }
@@ -198,12 +202,12 @@
 .CTA-box::before {
   content: "";
   position: absolute;
-  width: 50vw;
-  height: 50vw; /* Responsive size */
+  width: 150%;
+  height: 150%;
   background: radial-gradient(circle at center, #6e00a2 0%, transparent 70%);
   top: 50%;
-  right: -10%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 0;
 }
 
@@ -286,4 +290,76 @@
   margin: 0 auto 40px;
   line-height: 1.5;
   text-shadow: 2px 2px 2px #000000;
+}
+
+/* ******************************* */
+/*   Above 1344 PIXELS (Larger DESKTOPS)   */
+/* ******************************* */
+@media (min-width: 84em) {
+  .CTA-content p {
+    font-size: 3.7rem;
+  }
+
+  .hero-logo {
+    width: 50%;
+  }
+}
+
+/* ******************************* */
+/*   BELOW 752 PIXELS  */
+/* ******************************* */
+
+@media (max-width: 47em) {
+  .hero-logo {
+    width: 90%;
+  }
+
+  .section-CTA .container {
+    flex-direction: column;
+  }
+
+  .CTA-content {
+    max-width: 80%;
+  }
+
+  .CTA-content h1 {
+    font-size: 7vw;
+  }
+
+  .CTA-content p {
+    font-size: 4.5vw;
+  }
+}
+
+/* ******************************* */
+/*   BELOW 608 PIXELS  */
+/* ******************************* */
+
+@media (max-width: 38em) {
+  .section-gallery p {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .section-gallery p span {
+    font-size: 2.5rem;
+  }
+
+  .video-box iframe {
+    width: 90%;
+  }
+}
+
+/* ******************************* */
+/*   BELOW 432 PIXELS  */
+/* ******************************* */
+
+@media (max-width: 27em) {
+  .section-gallery p {
+    font-size: 4vw;
+  }
+
+  .section-gallery p span {
+    font-size: 4.2vw;
+  }
 }

@@ -1,0 +1,95 @@
+.section-signup {
+  background-image: linear-gradient(
+      0deg,
+      rgba(87, 216, 202, 1) 0%,
+      rgba(0, 0, 0, 0.5) 0%
+    ),
+    url(../Assets/about_background.png);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-box {
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  width: 40rem;
+  padding: 2rem 0 3rem 0;
+  border-radius: 9px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.form-box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.form-subbox {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  color: #96cb95;
+  font-size: 2.8rem;
+
+  align-self: flex-start;
+}
+
+.form-input {
+  width: 100%;
+  margin: 0 auto;
+  font-family: Handjet;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  font-size: 2.8rem;
+  font-weight: 300;
+}
+
+.form-input::placeholder {
+  color: #d5d5d5a4;
+}
+
+.form-box form button {
+  background-color: #96cb95;
+  width: 100%;
+
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-family: Handjet;
+  border: 1px solid #00fb43;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.form-box form button:active {
+  transform: scale(90%);
+}
+
+/* ******************************* */
+/*   BELOW 432 PIXELS  */
+/* ******************************* */
+
+@media (max-width: 27em) {
+  .form-box {
+    width: 90%;
+  }
+
+  .form-input {
+    font-size: 2.1rem;
+  }
+}

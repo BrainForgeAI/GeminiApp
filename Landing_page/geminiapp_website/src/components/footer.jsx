@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="footer-mid">
         <img
           className="logo-img"
-          src={require("../Assets/final_logo.png")}
+          src={require("../Assets/hero_logo.png")}
           alt="BrainForge Logo"
         />
       </div>
