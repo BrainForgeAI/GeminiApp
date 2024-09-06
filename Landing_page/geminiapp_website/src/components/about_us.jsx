@@ -6,12 +6,12 @@ const About = () => {
     <div className="About_background">
       <div className="about-container">
         <h1 className="main-title">
-          Learning can be hard. We can change that.
+          Learning can be hard. We can change that. ❤️
         </h1>
 
         <div className="content">
           <p>
-            Our team at EduQuest is driven by a singular mission: to ignite the
+            Our team at BrainForge is driven by a singular mission: to ignite the
             spark of learning in every individual, regardless of age or
             background. With the emergence of advanced AI technologies,
             particularly Google's Multimodal Gemini Model, we've unlocked the
@@ -33,7 +33,7 @@ const About = () => {
           </p>
         </div>
 
-        <h2 className="section-title">Our Story</h2>
+        <h2 className="section-title">Our Story ⚔️</h2>
 
         <div className="content">
           <p>
