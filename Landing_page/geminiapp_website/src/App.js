@@ -42,7 +42,7 @@ function App() {
               <Route path="/demo" element={<Demo />} /> 
               <Route path="/signup" element ={<SignupPage/>}/>
             </Routes>
-
+            <Footer />
           </>
         )}
       </div>
