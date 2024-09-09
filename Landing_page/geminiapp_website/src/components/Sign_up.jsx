@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import signup from "../APIs/websiteSignUp";
 import "../styles/signup.css";
 
 const SignupPage = () => {
@@ -8,6 +9,9 @@ const SignupPage = () => {
     password: "",
   });
 
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null); 
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -15,10 +19,20 @@ const SignupPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission logic here
-    console.log("Form Data:", formData);
+    try {
+      const data = await signup(formData);
+      if (data.code == 200) {
+        setSuccessMessage(data.message);
+      }
+      else {
+        setError(data.message);
+      }
+    } catch (err) {
+      setError(err.message || "Something went wrong!");
+    }
   };
 
   return (
