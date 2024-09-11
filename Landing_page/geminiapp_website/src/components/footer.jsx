@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../styles/footer.css";
 import { IonIcon } from "@ionic/react";
 import { logoGithub } from "ionicons/icons";

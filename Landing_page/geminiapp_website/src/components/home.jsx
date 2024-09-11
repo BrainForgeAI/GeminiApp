@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import backgroundImage from "../Assets/background.png";
 import "../styles/home.css";
 import heroLogo from "../Assets/hero_logo.png";
 import ctaImage from "../Assets/CTA-img.png";
@@ -23,7 +22,7 @@ const Homepage = () => {
       <section className="section-gallery" id="section-gallery">
         <div className="container">
           <p>
-            EduQuest harnesses <span>G</span>
+            Aspectus harnesses <span>G</span>
             <span>o</span>
             <span>o</span>
             <span>g</span>
@@ -59,7 +58,7 @@ const Homepage = () => {
               PLAY <span>SMART.</span> GROW <span>SMARTER.</span>
             </h1>
             <p>
-              EduQuest harnesses Google's Gemini AI Model to revolutionize
+              Aspectus harnesses Google's Gemini AI Model to revolutionize
               learning. Our adaptive platform creates personalized game-like
               experiences, tailoring challenges to each user's pace and style.
               We make education engaging and accessible for everyone. The joy of

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import '../styles/gallery.css'; // Import the CSS file
 import Image1 from '../Assets/GallaryImage1.png';
 import Image2 from '../Assets/GallaryImage2.png';
-import Footer from "./footer";
-
 
 const images = [
   Image1,
