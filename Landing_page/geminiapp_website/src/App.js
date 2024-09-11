@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styles/App.css";
 import Navbar from "./components/navbar.jsx";
-import Footer from "./components/footer.jsx";
+//import Footer from "./components/footer.jsx";
 import Homepage from "./components/home.jsx";
 import About from "./components/about_us.jsx";
 import Gallery from "./components/gallery.jsx";

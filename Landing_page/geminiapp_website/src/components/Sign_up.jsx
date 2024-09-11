@@ -9,8 +9,8 @@ const SignupPage = () => {
     password: "",
   });
 
-  const [error, setError] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(null); 
+  const [setError] = useState(null);
+  const [setSuccessMessage] = useState(null); 
 
   const handleChange = (e) => {
     setFormData({
@@ -24,7 +24,7 @@ const SignupPage = () => {
     // Handle form submission logic here
     try {
       const data = await signup(formData);
-      if (data.code == 200) {
+      if (data.code === 200) {
         setSuccessMessage(data.message);
       }
       else {

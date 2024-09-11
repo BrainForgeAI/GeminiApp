@@ -24,6 +24,7 @@ const Footer = () => {
           className="footer-link"
           href="https://www.linkedin.com/company/brainforge-ai/about/"
           target="_blank"
+          rel="noreferrer"
         >
           <IonIcon icon={logoLinkedin}></IonIcon>
         </a>
@@ -31,6 +32,7 @@ const Footer = () => {
           className="footer-link"
           href="https://github.com/BrainForgeAI"
           target="_blank"
+          rel="noreferrer"
         >
           <IonIcon icon={logoGithub}></IonIcon>
         </a>
